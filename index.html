@@ -2,182 +2,923 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CleanUp – Logiciel de gestion pour conciergeries</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CleanUp Manager – Logiciel de gestion pour conciergeries</title>
+  <meta
+    name="description"
+    content="CleanUp Manager : logiciel de gestion pour conciergeries. Planning, missions, preuves photos, relevés propriétaires, comptabilité. Gratuit jusqu’à 2 logements."
+  />
+  <meta name="theme-color" content="#7A5CFF" />
 
-  <meta name="description" content="CleanUp : logiciel simple pour gérer une conciergerie. Planning, missions, photos, facturation. Gratuit jusqu’à 2 logements. Sans commission." />
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
+    :root{
+      --bg:#f5f1ff;
+      --bg2:#efe8ff;
+      --panel:#ffffff;
+      --line:#e3d9ff;
+      --line-strong:#d1c0ff;
+      --text:#171717;
+      --muted:#6c6c78;
+      --violet:#7a5cff;
+      --violet-dark:#5e39ff;
+      --violet-soft:#f1ecff;
+      --shadow:0 18px 50px rgba(76, 43, 180, 0.10);
+      --radius:24px;
+      --radius-sm:18px;
+      --max:1180px;
+    }
+
+    *{ box-sizing:border-box; }
+
+    html{ scroll-behavior:smooth; }
+
     body{
       margin:0;
-      font-family:Inter, sans-serif;
-      background:#f8f7ff;
-      color:#111;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(122,92,255,.12), transparent 24%),
+        radial-gradient(circle at top right, rgba(122,92,255,.10), transparent 18%),
+        linear-gradient(180deg, #f7f3ff 0%, #f2ecff 100%);
     }
+
+    img{ max-width:100%; display:block; }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
     .container{
-      max-width:1100px;
-      margin:auto;
-      padding:40px 20px;
+      width:min(var(--max), calc(100% - 28px));
+      margin:0 auto;
     }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(12px);
+      background:rgba(247,243,255,.82);
+      border-bottom:1px solid rgba(122,92,255,.10);
+    }
+
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      font-weight:800;
+      font-size:1.06rem;
+      letter-spacing:-.02em;
+    }
+
+    .brand-logo{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .brand-logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      color:var(--muted);
+      font-weight:600;
+      font-size:.96rem;
+    }
+
+    .nav-links a:hover{ color:var(--text); }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 20px;
+      border-radius:14px;
+      font-weight:700;
+      border:1px solid transparent;
+      transition:.2s ease;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+
+    .btn:hover{ transform:translateY(-1px); }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--violet), var(--violet-dark));
+      color:#fff;
+      box-shadow:0 12px 28px rgba(122,92,255,.28);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:var(--violet-dark);
+      border-color:var(--line-strong);
+    }
+
+    .hero{
+      padding:48px 0 28px;
+    }
+
+    .hero-wrap{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:26px;
+      align-items:center;
+    }
+
+    .hero-copy{
+      padding:10px 0;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--line);
+      color:var(--violet-dark);
+      font-size:.9rem;
+      font-weight:700;
+      margin-bottom:18px;
+      box-shadow:var(--shadow);
+    }
+
     h1{
-      font-size:42px;
+      margin:0 0 16px;
+      font-size:clamp(2.3rem, 5vw, 4.2rem);
+      line-height:.98;
+      letter-spacing:-.05em;
+    }
+
+    .accent{
+      color:var(--violet-dark);
+    }
+
+    .hero-copy p{
+      margin:0;
+      font-size:1.08rem;
+      line-height:1.75;
+      color:#4f4f5f;
+      max-width:680px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .hero-notes{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--line);
+      color:#5d5d70;
+      font-size:.9rem;
+      font-weight:700;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-shot{
+      position:relative;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(255,255,255,.85);
+      border-radius:30px;
+      padding:16px;
+      box-shadow:0 26px 80px rgba(87,58,186,.18);
+    }
+
+    .hero-card img{
+      border-radius:22px;
+      border:1px solid var(--line);
+    }
+
+    .badge-float{
+      position:absolute;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:18px;
+      padding:12px 14px;
+      font-size:.86rem;
+      font-weight:800;
+      color:#45455a;
+    }
+
+    .badge-1{
+      top:-10px;
+      right:18px;
+    }
+
+    .badge-2{
+      left:-8px;
+      bottom:16px;
+    }
+
+    .section{
+      padding:28px 0;
+    }
+
+    .section-head{
+      max-width:780px;
+      margin-bottom:22px;
+    }
+
+    .kicker{
+      font-size:.82rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:var(--violet-dark);
+      font-weight:800;
       margin-bottom:10px;
     }
+
     h2{
-      font-size:28px;
-      margin-bottom:15px;
+      margin:0 0 12px;
+      font-size:clamp(1.8rem, 3vw, 2.8rem);
+      line-height:1.04;
+      letter-spacing:-.04em;
     }
-    p{
-      color:#555;
-      line-height:1.6;
+
+    .lead{
+      margin:0;
+      color:#5b5b6a;
+      line-height:1.75;
+      font-size:1.02rem;
     }
-    .hero{
-      text-align:center;
-      padding:60px 20px;
-    }
-    .btn{
-      display:inline-block;
-      padding:14px 24px;
-      background:#7A5CFF;
-      color:#fff;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:600;
-      margin-top:20px;
-    }
-    .section{
-      margin-top:60px;
-    }
-    .grid{
+
+    .features{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
     }
-    .card{
-      background:#fff;
-      padding:20px;
-      border-radius:12px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.05);
+
+    .feature{
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:var(--shadow);
     }
-    .pricing{
+
+    .feature-num{
+      width:42px;
+      height:42px;
+      border-radius:14px;
       display:flex;
+      align-items:center;
+      justify-content:center;
+      background:var(--violet-soft);
+      border:1px solid var(--line-strong);
+      color:var(--violet-dark);
+      font-size:.9rem;
+      font-weight:800;
+      margin-bottom:14px;
+    }
+
+    .feature h3{
+      margin:0 0 10px;
+      font-size:1.08rem;
+      letter-spacing:-.02em;
+    }
+
+    .feature p{
+      margin:0;
+      color:#626273;
+      line-height:1.7;
+      font-size:.96rem;
+    }
+
+    .showcase{
+      display:grid;
+      grid-template-columns:1fr 1fr;
       gap:20px;
+    }
+
+    .shot-card{
+      background:rgba(255,255,255,.80);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+
+    .shot-card img{
+      border-radius:20px;
+      border:1px solid var(--line);
+      margin-bottom:14px;
+    }
+
+    .shot-card h3{
+      margin:0 0 8px;
+      font-size:1.08rem;
+      letter-spacing:-.02em;
+    }
+
+    .shot-card p{
+      margin:0;
+      color:#5f5f71;
+      line-height:1.7;
+    }
+
+    .proof{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .proof-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.72));
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .proof-card h3{
+      margin:0 0 12px;
+      font-size:1.1rem;
+      letter-spacing:-.02em;
+    }
+
+    .proof-card p{
+      margin:0;
+      color:#5f5f71;
+      line-height:1.8;
+    }
+
+    .pricing{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .price{
+      position:relative;
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .price.featured{
+      border-color:#cdbfff;
+      box-shadow:0 22px 60px rgba(122,92,255,.18);
+    }
+
+    .price-badge{
+      position:absolute;
+      top:16px;
+      right:16px;
+      min-height:32px;
+      padding:0 11px;
+      display:inline-flex;
+      align-items:center;
+      border-radius:999px;
+      background:var(--violet-soft);
+      border:1px solid var(--line-strong);
+      color:var(--violet-dark);
+      font-size:.76rem;
+      font-weight:800;
+    }
+
+    .price h3{
+      margin:0 0 8px;
+      font-size:1.14rem;
+    }
+
+    .price-target{
+      color:#6b6b7d;
+      font-size:.94rem;
+      margin-bottom:18px;
+    }
+
+    .price-value{
+      display:flex;
+      align-items:flex-end;
+      gap:6px;
+      margin-bottom:18px;
+    }
+
+    .price-value strong{
+      font-size:2.5rem;
+      line-height:1;
+      letter-spacing:-.05em;
+    }
+
+    .price-value span{
+      color:#737387;
+      margin-bottom:4px;
+      font-weight:700;
+    }
+
+    .price-list{
+      display:grid;
+      gap:10px;
+      margin-bottom:22px;
+    }
+
+    .price-item{
+      position:relative;
+      padding-left:18px;
+      color:#57576a;
+      line-height:1.65;
+      font-size:.95rem;
+    }
+
+    .price-item::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--violet-dark);
+      font-weight:900;
+    }
+
+    .owner-block{
+      background:linear-gradient(135deg, rgba(122,92,255,.10), rgba(255,255,255,.82));
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:20px;
+      align-items:center;
+    }
+
+    .owner-block h2{
+      margin-bottom:12px;
+    }
+
+    .owner-block p{
+      margin:0 0 18px;
+      color:#5f5f71;
+      line-height:1.8;
+    }
+
+    .owner-points{
+      display:grid;
+      gap:10px;
+    }
+
+    .owner-points .pill{
+      justify-content:flex-start;
+    }
+
+    .cta{
+      padding:30px 0 76px;
+    }
+
+    .cta-box{
+      background:linear-gradient(135deg, rgba(122,92,255,.16), rgba(255,255,255,.85));
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:34px;
+      box-shadow:0 26px 80px rgba(87,58,186,.14);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+
+    .cta-box h2{
+      margin:0 0 10px;
+    }
+
+    .cta-box p{
+      margin:0;
+      color:#5c5c6c;
+      line-height:1.75;
+      max-width:720px;
+    }
+
+    footer{
+      border-top:1px solid rgba(122,92,255,.12);
+      padding:24px 0 40px;
+      color:#707081;
+      font-size:.92rem;
+    }
+
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
       flex-wrap:wrap;
     }
-    .price-card{
-      flex:1;
-      min-width:250px;
-      background:#fff;
-      padding:25px;
-      border-radius:12px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.05);
+
+    @media (max-width: 1080px){
+      .hero-wrap,
+      .showcase,
+      .proof,
+      .owner-block,
+      .pricing{
+        grid-template-columns:1fr;
+      }
+
+      .features{
+        grid-template-columns:repeat(2, 1fr);
+      }
     }
-    .highlight{
-      font-size:24px;
-      font-weight:700;
-      margin:10px 0;
-    }
-    footer{
-      text-align:center;
-      margin-top:60px;
-      color:#888;
-      font-size:14px;
+
+    @media (max-width: 760px){
+      .nav{
+        min-height:auto;
+        padding:14px 0;
+        flex-wrap:wrap;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .nav-actions,
+      .hero-actions{
+        width:100%;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero{
+        padding-top:30px;
+      }
+
+      .features{
+        grid-template-columns:1fr;
+      }
+
+      .badge-1,
+      .badge-2{
+        position:static;
+        display:inline-flex;
+        margin-top:10px;
+      }
+
+      .hero-shot{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+      }
+
+      .cta-box{
+        align-items:flex-start;
+        padding:26px 22px;
+      }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="container">
-      <h1>Gérez votre conciergerie sans commission</h1>
-      <p>Planning, missions, photos et facturation réunis dans un seul outil simple et efficace.</p>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#" class="brand">
+        <div class="brand-logo">
+          <img src="./logo-cleanup.png" alt="Logo CleanUp Manager">
+        </div>
+        <span>CleanUp Manager</span>
+      </a>
 
-      <a href="#" class="btn">Créer mon compte gratuit</a>
-    </div>
-  </div>
+      <nav class="nav-links">
+        <a href="#fonctionnalites">Fonctionnalités</a>
+        <a href="#captures">Captures</a>
+        <a href="#proprietaires">Propriétaires</a>
+        <a href="#tarifs">Tarifs</a>
+      </nav>
 
-  <!-- PREUVE -->
-  <div class="container section">
-    <h2>Un outil utilisé sur le terrain</h2>
-    <p>CleanUp est utilisé par des conciergeries actives comme <strong>Les Clés de Mathilde à Orléans</strong>, pour gérer leur activité au quotidien.</p>
-  </div>
-
-  <!-- PROBLÈMES -->
-  <div class="container section">
-    <h2>Votre organisation aujourd’hui</h2>
-    <div class="grid">
-      <div class="card">Trop d’outils (WhatsApp, Excel, notes)</div>
-      <div class="card">Oublis de missions ou erreurs</div>
-      <div class="card">Suivi agents compliqué</div>
-      <div class="card">Facturation désorganisée</div>
-    </div>
-  </div>
-
-  <!-- SOLUTION -->
-  <div class="container section">
-    <h2>Ce que CleanUp change</h2>
-    <div class="grid">
-      <div class="card">Planning clair et centralisé</div>
-      <div class="card">Missions agents avec photos</div>
-      <div class="card">Factures et devis intégrés</div>
-      <div class="card">Suivi propriétaire simplifié</div>
-    </div>
-  </div>
-
-  <!-- DIFFÉRENCE -->
-  <div class="container section">
-    <h2>Une approche différente</h2>
-    <p>
-      Contrairement aux solutions classiques :
-    </p>
-    <ul>
-      <li>Vous gardez 100% de vos revenus</li>
-      <li>Aucune commission sur votre activité</li>
-      <li>Un simple abonnement, sans surprise</li>
-    </ul>
-  </div>
-
-  <!-- PRIX -->
-  <div class="container section">
-    <h2>Offre simple et transparente</h2>
-
-    <div class="pricing">
-      <div class="price-card">
-        <h3>Gratuit</h3>
-        <p>Jusqu’à 2 logements</p>
-        <div class="highlight">0€</div>
-      </div>
-
-      <div class="price-card">
-        <h3>Standard</h3>
-        <p>3 à 10 logements</p>
-        <div class="highlight">XX€/mois</div>
-      </div>
-
-      <div class="price-card">
-        <h3>Pro</h3>
-        <p>10+ logements</p>
-        <div class="highlight">XX€/mois</div>
+      <div class="nav-actions">
+        <a href="#captures" class="btn btn-secondary">Voir le produit</a>
+        <a href="https://cleanup-manager.fr/" class="btn btn-primary">Créer mon compte</a>
       </div>
     </div>
-  </div>
+  </header>
 
-  <!-- CTA FINAL -->
-  <div class="hero">
-    <div class="container">
-      <h2>Testez CleanUp gratuitement</h2>
-      <p>Créez votre compte en moins de 2 minutes</p>
+  <main>
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div class="hero-copy">
+          <div class="eyebrow">Logiciel métier pour conciergeries indépendantes</div>
 
-      <a href="#" class="btn">Démarrer gratuitement</a>
-    </div>
-  </div>
+          <h1>
+            La gestion conciergerie,
+            <span class="accent">enfin propre, lisible et rentable</span>
+          </h1>
+
+          <p>
+            Planning, missions, preuves photos, relevés propriétaires, comptabilité,
+            documents et espace propriétaire : CleanUp centralise l’exploitation dans
+            un seul outil réellement pensé pour le terrain.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://cleanup-manager.fr/" class="btn btn-primary">Créer mon compte conciergerie</a>
+            <a href="#captures" class="btn btn-secondary">Voir les captures</a>
+          </div>
+
+          <div class="hero-notes">
+            <div class="pill">Jusqu’à 2 logements gratuits</div>
+            <div class="pill">Abonnement au-delà</div>
+            <div class="pill">Espace propriétaire inclus</div>
+            <div class="pill">Zéro commission sur revenus locatifs côté propriétaire</div>
+          </div>
+        </div>
+
+        <div class="hero-shot">
+          <div class="hero-card">
+            <img src="./screen-dashboard.png" alt="Tableau de bord CleanUp Manager">
+          </div>
+          <div class="badge-float badge-1">Planning • Production • Comptabilité</div>
+          <div class="badge-float badge-2">Utilisable dès les premiers logements</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fonctionnalites">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Fonctionnalités</div>
+          <h2>Pas un logiciel de plus. Un vrai cockpit métier.</h2>
+          <p class="lead">
+            CleanUp évite le bricolage entre WhatsApp, Excel, notes, rappels et documents
+            dispersés. Tu pilotes l’activité dans un environnement cohérent, avec une
+            logique conciergerie de bout en bout.
+          </p>
+        </div>
+
+        <div class="features">
+          <article class="feature">
+            <div class="feature-num">01</div>
+            <h3>Planning centralisé</h3>
+            <p>Vue claire des logements, réservations, interventions et organisation quotidienne sans naviguer partout.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-num">02</div>
+            <h3>Missions agents</h3>
+            <p>Checklist, suivi de statut, fin de prestation et traçabilité opérationnelle sur chaque intervention.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-num">03</div>
+            <h3>Preuves et contrôle</h3>
+            <p>Commentaires, photos et validation terrain pour sécuriser la qualité de service et limiter les zones floues.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-num">04</div>
+            <h3>Comptabilité & relevés</h3>
+            <p>Factures, avoirs, net TTC, reste dû et relevés propriétaires dans une logique exploitable et présentable.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-num">05</div>
+            <h3>Espace propriétaire</h3>
+            <p>Accès dédié par invitation avec tableau de bord, consultation des informations et suivi sans chaos.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-num">06</div>
+            <h3>Entrée simple</h3>
+            <p>Une vraie page d’inscription / connexion, claire et directe, pour démarrer vite sans parcours absurde.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="captures">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Captures réelles</div>
+          <h2>Le produit n’est pas théorique. Il existe déjà.</h2>
+          <p class="lead">
+            Voilà la différence entre une vitrine qui raconte des choses et une vitrine qui montre
+            vraiment l’outil : dashboard conciergerie, mission agent et relevé propriétaire.
+          </p>
+        </div>
+
+        <div class="showcase">
+          <article class="shot-card">
+            <img src="./screen-dashboard.png" alt="Dashboard conciergerie CleanUp">
+            <h3>Dashboard conciergerie</h3>
+            <p>Vue globale sur les clients, logements, agents, planning, production, comptabilité, boutique et accès légal.</p>
+          </article>
+
+          <article class="shot-card">
+            <img src="./screen-mission.png" alt="Mission agent CleanUp">
+            <h3>Missions agents et checklists</h3>
+            <p>Chaque intervention est structurée, affectée, suivie, puis clôturée proprement. C’est concret, pas cosmétique.</p>
+          </article>
+
+          <article class="shot-card">
+            <img src="./screen-releve.png" alt="Relevé propriétaire CleanUp">
+            <h3>Relevés et documents propriétaires</h3>
+            <p>Relevé lisible, propre, imprimable, avec factures, avoirs, net TTC et statut de publication.</p>
+          </article>
+
+          <article class="shot-card">
+            <img src="./screen-inscription.png" alt="Page d’inscription CleanUp">
+            <h3>Entrée produit claire</h3>
+            <p>La page d’accès explique immédiatement la logique conciergerie / propriétaire et le modèle économique.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="proof">
+          <div class="proof-card">
+            <h3>Un produit issu du terrain</h3>
+            <p>
+              CleanUp n’a pas été conçu comme une coquille marketing. L’outil reprend les besoins
+              réels d’exploitation d’une conciergerie : organiser, affecter, suivre, justifier,
+              facturer et publier côté propriétaire.
+            </p>
+          </div>
+
+          <div class="proof-card">
+            <h3>Une logique simple : moins d’outils, plus de contrôle</h3>
+            <p>
+              Là où beaucoup empilent des solutions et perdent la main, CleanUp vise l’inverse :
+              centraliser l’essentiel, rendre le quotidien plus lisible et professionnaliser la gestion.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proprietaires">
+      <div class="container">
+        <div class="owner-block">
+          <div>
+            <div class="kicker">Côté propriétaires</div>
+            <h2>Un tableau de bord dédié, sans ponction sur les revenus locatifs</h2>
+            <p>
+              Le propriétaire accède à son espace sur invitation de la conciergerie.
+              Il retrouve ses informations, ses documents et son suivi dans un espace clair.
+              Le message différenciant est simple : <strong>zéro commission prélevée par CleanUp sur ses revenus locatifs</strong>.
+            </p>
+
+            <a href="https://cleanup-manager.fr/" class="btn btn-primary">Découvrir CleanUp</a>
+          </div>
+
+          <div class="owner-points">
+            <div class="pill">Connexion propriétaire dédiée</div>
+            <div class="pill">Accès sur invitation uniquement</div>
+            <div class="pill">Relevés et documents consultables</div>
+            <div class="pill">Zéro commission sur revenus locatifs</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tarifs">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Tarifs</div>
+          <h2>Tu commences gratuitement. Tu paies quand l’activité existe.</h2>
+          <p class="lead">
+            Le bon angle est celui-ci : entrée facile, adoption simple, puis abonnement quand la conciergerie dépasse le cap de démarrage.
+          </p>
+        </div>
+
+        <div class="pricing">
+          <article class="price">
+            <h3>Découverte</h3>
+            <div class="price-target">Pour démarrer proprement</div>
+
+            <div class="price-value">
+              <strong>0€</strong>
+              <span>/mois</span>
+            </div>
+
+            <div class="price-list">
+              <div class="price-item">Jusqu’à 2 logements</div>
+              <div class="price-item">Accès complet de base</div>
+              <div class="price-item">Idéal pour tester le produit</div>
+            </div>
+
+            <a href="https://cleanup-manager.fr/" class="btn btn-secondary">Commencer</a>
+          </article>
+
+          <article class="price featured">
+            <div class="price-badge">Offre clé</div>
+            <h3>Standard</h3>
+            <div class="price-target">Pour conciergerie en croissance</div>
+
+            <div class="price-value">
+              <strong>49€</strong>
+              <span>/mois</span>
+            </div>
+
+            <div class="price-list">
+              <div class="price-item">De 3 à 10 logements</div>
+              <div class="price-item">Planning, missions, suivi et documents</div>
+              <div class="price-item">Abonnement lisible, sans commission sur votre activité</div>
+            </div>
+
+            <a href="https://cleanup-manager.fr/" class="btn btn-primary">Choisir Standard</a>
+          </article>
+
+          <article class="price">
+            <h3>Pro</h3>
+            <div class="price-target">Pour structurer plus large</div>
+
+            <div class="price-value">
+              <strong>89€</strong>
+              <span>/mois</span>
+            </div>
+
+            <div class="price-list">
+              <div class="price-item">À partir de 11 logements</div>
+              <div class="price-item">Pilotage plus dense de l’exploitation</div>
+              <div class="price-item">Conçu pour scaler sans chaos</div>
+            </div>
+
+            <a href="https://cleanup-manager.fr/" class="btn btn-secondary">Passer en Pro</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Montre enfin un vrai logiciel, pas une promesse vide</h2>
+            <p>
+              Avec tes vraies captures, ton vrai accès produit et ton vrai angle marché,
+              la vitrine commence à devenir crédible. Le bon move maintenant : publier cette version,
+              puis brancher des CTA propres vers l’inscription et la demande de démo.
+            </p>
+          </div>
+
+          <a href="https://cleanup-manager.fr/" class="btn btn-primary">Créer mon compte</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    © CleanUp Manager – Logiciel de gestion conciergerie
+    <div class="container footer-row">
+      <div>© CleanUp Manager — Logiciel de gestion pour conciergeries</div>
+      <div>Gratuit jusqu’à 2 logements • Espace propriétaire inclus</div>
+    </div>
   </footer>
 
 </body>
