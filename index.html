@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CleanUp – Logiciel de gestion pour conciergeries</title>
 
+  <meta name="description" content="CleanUp : logiciel simple pour gérer une conciergerie. Planning, missions, photos, facturation. Gratuit jusqu’à 2 logements. Sans commission." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+      margin:0;
+      font-family:Inter, sans-serif;
+      background:#f8f7ff;
+      color:#111;
+    }
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:40px 20px;
+    }
+    h1{
+      font-size:42px;
+      margin-bottom:10px;
+    }
+    h2{
+      font-size:28px;
+      margin-bottom:15px;
+    }
+    p{
+      color:#555;
+      line-height:1.6;
+    }
+    .hero{
+      text-align:center;
+      padding:60px 20px;
+    }
+    .btn{
+      display:inline-block;
+      padding:14px 24px;
+      background:#7A5CFF;
+      color:#fff;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      margin-top:20px;
+    }
+    .section{
+      margin-top:60px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+    .card{
+      background:#fff;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    }
+    .pricing{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .price-card{
+      flex:1;
+      min-width:250px;
+      background:#fff;
+      padding:25px;
+      border-radius:12px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    }
+    .highlight{
+      font-size:24px;
+      font-weight:700;
+      margin:10px 0;
+    }
+    footer{
+      text-align:center;
+      margin-top:60px;
+      color:#888;
+      font-size:14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="container">
+      <h1>Gérez votre conciergerie sans commission</h1>
+      <p>Planning, missions, photos et facturation réunis dans un seul outil simple et efficace.</p>
+
+      <a href="#" class="btn">Créer mon compte gratuit</a>
+    </div>
+  </div>
+
+  <!-- PREUVE -->
+  <div class="container section">
+    <h2>Un outil utilisé sur le terrain</h2>
+    <p>CleanUp est utilisé par des conciergeries actives comme <strong>Les Clés de Mathilde à Orléans</strong>, pour gérer leur activité au quotidien.</p>
+  </div>
+
+  <!-- PROBLÈMES -->
+  <div class="container section">
+    <h2>Votre organisation aujourd’hui</h2>
+    <div class="grid">
+      <div class="card">Trop d’outils (WhatsApp, Excel, notes)</div>
+      <div class="card">Oublis de missions ou erreurs</div>
+      <div class="card">Suivi agents compliqué</div>
+      <div class="card">Facturation désorganisée</div>
+    </div>
+  </div>
+
+  <!-- SOLUTION -->
+  <div class="container section">
+    <h2>Ce que CleanUp change</h2>
+    <div class="grid">
+      <div class="card">Planning clair et centralisé</div>
+      <div class="card">Missions agents avec photos</div>
+      <div class="card">Factures et devis intégrés</div>
+      <div class="card">Suivi propriétaire simplifié</div>
+    </div>
+  </div>
+
+  <!-- DIFFÉRENCE -->
+  <div class="container section">
+    <h2>Une approche différente</h2>
+    <p>
+      Contrairement aux solutions classiques :
+    </p>
+    <ul>
+      <li>Vous gardez 100% de vos revenus</li>
+      <li>Aucune commission sur votre activité</li>
+      <li>Un simple abonnement, sans surprise</li>
+    </ul>
+  </div>
+
+  <!-- PRIX -->
+  <div class="container section">
+    <h2>Offre simple et transparente</h2>
+
+    <div class="pricing">
+      <div class="price-card">
+        <h3>Gratuit</h3>
+        <p>Jusqu’à 2 logements</p>
+        <div class="highlight">0€</div>
+      </div>
+
+      <div class="price-card">
+        <h3>Standard</h3>
+        <p>3 à 10 logements</p>
+        <div class="highlight">XX€/mois</div>
+      </div>
+
+      <div class="price-card">
+        <h3>Pro</h3>
+        <p>10+ logements</p>
+        <div class="highlight">XX€/mois</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="hero">
+    <div class="container">
+      <h2>Testez CleanUp gratuitement</h2>
+      <p>Créez votre compte en moins de 2 minutes</p>
+
+      <a href="#" class="btn">Démarrer gratuitement</a>
+    </div>
+  </div>
+
+  <footer>
+    © CleanUp Manager – Logiciel de gestion conciergerie
+  </footer>
+
+</body>
+</html>
