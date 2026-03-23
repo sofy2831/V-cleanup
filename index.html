@@ -4,26 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>CleanUp Manager | Logiciel de conciergerie Airbnb et location courte durée</title>
-  <meta name="description" content="CleanUp Manager est un logiciel de conciergerie Airbnb et location courte durée : planning, logements, interventions, agents, preuves photos, devis, factures et suivi propriétaire. Gratuit jusqu’à 2 logements, sans commission." />
+  <title>CleanUp Manager | Logiciel de conciergerie et location courte durée</title>
+  <meta name="description" content="CleanUp Manager est un logiciel de conciergerie et de location courte durée : planning, logements, interventions, agents, preuves photos, devis, factures et suivi propriétaire. Gratuit jusqu’à 2 logements, sans commission." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#7A5CFF" />
   <meta name="author" content="CleanUp Manager" />
-  <meta name="keywords" content="logiciel conciergerie, logiciel conciergerie airbnb, logiciel location courte durée, logiciel gestion airbnb, planning conciergerie, logiciel ménage airbnb, logiciel facturation conciergerie, logiciel gestion logements, conciergerie location saisonnière" />
+  <meta name="keywords" content="logiciel conciergerie, logiciel location courte durée, logiciel gestion locations saisonnières, logiciel gestion airbnb booking abritel, planning conciergerie, logiciel ménage location saisonnière, logiciel facturation conciergerie, logiciel gestion logements" />
 
   <link rel="canonical" href="https://sofy2831.github.io/V-cleanup/" />
   <link rel="icon" href="./image/logo.png" />
 
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="CleanUp Manager | Logiciel de conciergerie Airbnb et location courte durée" />
+  <meta property="og:title" content="CleanUp Manager | Logiciel de conciergerie et location courte durée" />
   <meta property="og:description" content="Planning, logements, missions, agents, photos, devis et factures dans un seul outil. Gratuit jusqu’à 2 logements. Sans commission." />
   <meta property="og:url" content="https://sofy2831.github.io/V-cleanup/" />
   <meta property="og:site_name" content="CleanUp Manager" />
   <meta property="og:image" content="https://sofy2831.github.io/V-cleanup/image/logo.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CleanUp Manager | Logiciel de conciergerie Airbnb" />
+  <meta name="twitter:title" content="CleanUp Manager | Logiciel de conciergerie" />
   <meta name="twitter:description" content="Le logiciel pour structurer une conciergerie : planning, interventions, agents, photos, devis et factures." />
   <meta name="twitter:image" content="https://sofy2831.github.io/V-cleanup/image/logo.png" />
 
@@ -35,7 +35,6 @@
     :root{
       --violet:#7A5CFF;
       --violet-dark:#5E39FF;
-      --violet-soft:#F3ECFF;
       --bg:#F8F7FF;
       --card:#FFFFFF;
       --text:#111111;
@@ -44,8 +43,6 @@
       --shadow:0 16px 40px rgba(49,33,110,.08);
       --shadow-strong:0 24px 60px rgba(48,30,118,.14);
       --radius:22px;
-      --ok:#18854B;
-      --gold:#FFC85A;
     }
 
     *{ box-sizing:border-box; }
@@ -69,6 +66,10 @@
       text-decoration:none;
     }
 
+    button{
+      font-family:inherit;
+    }
+
     .container{
       width:100%;
       max-width:1180px;
@@ -86,7 +87,7 @@
     }
 
     .topbar-inner{
-      min-height:74px;
+      min-height:78px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -96,15 +97,15 @@
     .brand{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:14px;
       font-weight:900;
-      font-size:18px;
+      font-size:20px;
     }
 
     .brand-badge{
-      width:46px;
-      height:46px;
-      border-radius:15px;
+      width:64px;
+      height:64px;
+      border-radius:18px;
       background:#fff;
       border:1px solid var(--border);
       box-shadow:var(--shadow);
@@ -113,11 +114,12 @@
       justify-content:center;
       overflow:hidden;
       flex-shrink:0;
+      padding:8px;
     }
 
     .brand-badge img{
-      width:34px;
-      height:34px;
+      width:50px;
+      height:50px;
       object-fit:contain;
     }
 
@@ -167,7 +169,7 @@
     }
 
     .hero{
-      padding:54px 0 22px;
+      padding:54px 0 24px;
     }
 
     .hero-wrap{
@@ -200,38 +202,11 @@
     }
 
     .hero p{
-      margin:0 0 24px;
-      max-width:680px;
+      margin:0;
+      max-width:700px;
       font-size:18px;
       line-height:1.65;
       color:var(--muted);
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-bottom:18px;
-    }
-
-    .hero-points{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius:999px;
-      background:#fff;
-      border:1px solid var(--border);
-      font-size:13px;
-      font-weight:800;
-      color:#4F5564;
-      box-shadow:var(--shadow);
     }
 
     .hero-visual{
@@ -341,11 +316,27 @@
       overflow:hidden;
     }
 
-    .shot-card img{
+    .shot-button{
+      display:block;
+      width:100%;
+      border:none;
+      padding:0;
+      margin:0;
+      background:transparent;
+      cursor:pointer;
+      text-align:left;
+    }
+
+    .shot-button img{
       width:100%;
       aspect-ratio:16/11;
       object-fit:cover;
       background:#fff;
+      transition:transform .2s ease;
+    }
+
+    .shot-button:hover img{
+      transform:scale(1.02);
     }
 
     .shot-body{
@@ -510,14 +501,60 @@
     .footer-brand{
       display:flex;
       align-items:center;
-      gap:10px;
+      gap:12px;
       font-weight:800;
     }
 
     .footer-brand img{
-      width:26px;
-      height:26px;
+      width:34px;
+      height:34px;
       object-fit:contain;
+    }
+
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(15,12,30,.82);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      z-index:9999;
+    }
+
+    .lightbox.open{
+      display:flex;
+    }
+
+    .lightbox-inner{
+      position:relative;
+      max-width:1100px;
+      width:100%;
+    }
+
+    .lightbox-close{
+      position:absolute;
+      top:-14px;
+      right:-4px;
+      width:44px;
+      height:44px;
+      border:none;
+      border-radius:999px;
+      background:#fff;
+      color:#111;
+      font-size:24px;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+    }
+
+    .lightbox img{
+      width:100%;
+      max-height:86vh;
+      object-fit:contain;
+      border-radius:20px;
+      background:#fff;
+      box-shadow:var(--shadow-strong);
     }
 
     @media (max-width:1120px){
@@ -571,6 +608,20 @@
       .price-value{
         font-size:30px;
       }
+
+      .brand{
+        font-size:18px;
+      }
+
+      .brand-badge{
+        width:56px;
+        height:56px;
+      }
+
+      .brand-badge img{
+        width:42px;
+        height:42px;
+      }
     }
   </style>
 
@@ -583,7 +634,7 @@
     "operatingSystem":"Web",
     "url":"https://sofy2831.github.io/V-cleanup/",
     "image":"https://sofy2831.github.io/V-cleanup/image/logo.png",
-    "description":"Logiciel de conciergerie Airbnb et location courte durée pour gérer planning, logements, interventions, agents, preuves photos, devis et factures.",
+    "description":"Logiciel de conciergerie et location courte durée pour gérer planning, logements, interventions, agents, preuves photos, devis et factures.",
     "offers":{
       "@type":"AggregateOffer",
       "priceCurrency":"EUR",
@@ -614,7 +665,7 @@
         <a class="nav-link" href="#captures">Captures</a>
         <a class="nav-link" href="#tarifs">Tarifs</a>
         <a class="nav-link" href="#faq">FAQ</a>
-        <a class="btn btn-primary" href="https://cleanup-manager.fr/">Créer mon compte</a>
+        <a class="btn btn-primary" href="https://cleanup-manager.fr/">Créer mon compte gratuit</a>
       </nav>
     </div>
   </header>
@@ -623,30 +674,19 @@
     <section class="hero">
       <div class="container hero-wrap">
         <div>
-          <div class="eyebrow">Logiciel conciergerie • Airbnb • location courte durée</div>
+          <div class="eyebrow">Logiciel de conciergerie • location courte durée • multi-plateformes</div>
 
           <h1>Le logiciel de conciergerie pour piloter planning, agents, photos et facturation</h1>
 
           <p>
-            CleanUp Manager aide les conciergeries Airbnb et locations courte durée à gérer
-            leurs logements, réservations, interventions, preuves photos, devis et factures
-            dans un seul outil, sans commission.
+            CleanUp Manager aide les conciergeries et gestionnaires de locations courte durée
+            à centraliser logements, réservations, interventions, preuves photos, devis et factures
+            dans un seul outil. Compatible avec une activité issue d’Airbnb, Booking.com, Abritel et autres plateformes.
           </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://cleanup-manager.fr/">Créer mon compte gratuit</a>
-            <a class="btn btn-secondary" href="#captures">Voir l’interface</a>
-          </div>
-
-          <div class="hero-points">
-            <span class="pill">Gratuit jusqu’à 2 logements</span>
-            <span class="pill">Sans commission</span>
-            <span class="pill">Pensé pour les conciergeries terrain</span>
-          </div>
         </div>
 
         <div class="hero-visual">
-          <img src="./image/tableau%20de%20bord.png" alt="Tableau de bord CleanUp Manager pour conciergerie">
+          <img src="./image/tableau-de-bord.png" alt="Tableau de bord CleanUp Manager pour conciergerie">
         </div>
       </div>
     </section>
@@ -663,8 +703,8 @@
             <p>Vous gardez vos revenus. CleanUp Manager fonctionne à l’abonnement.</p>
           </article>
           <article class="stat-card">
-            <div class="stat-big">2 logements gratuits</div>
-            <p>De quoi démarrer proprement avant de monter en charge.</p>
+            <div class="stat-big">Interface métier</div>
+            <p>Conçue pour une vraie conciergerie terrain, pas pour faire joli en démo.</p>
           </article>
         </div>
       </div>
@@ -705,13 +745,15 @@
         <div class="section-head">
           <h2>Le logiciel en images</h2>
           <p>
-            Voilà ce que voit une conciergerie dans CleanUp Manager. C’est plus parlant que 40 lignes de marketing.
+            Clique sur une capture pour l’ouvrir en grand. Là au moins, on voit vraiment l’outil.
           </p>
         </div>
 
         <div class="screens-grid">
           <article class="shot-card">
-            <img src="./image/tableau%20de%20bord.png" alt="Tableau de bord du logiciel de conciergerie CleanUp Manager">
+            <button class="shot-button" type="button" data-full="./image/tableau-de-bord.png" data-alt="Tableau de bord du logiciel de conciergerie CleanUp Manager">
+              <img src="./image/tableau-de-bord.png" alt="Tableau de bord du logiciel de conciergerie CleanUp Manager">
+            </button>
             <div class="shot-body">
               <h3>Tableau de bord</h3>
               <p>Vue d’ensemble rapide sur l’activité, les blocs métiers et les actions utiles.</p>
@@ -719,7 +761,9 @@
           </article>
 
           <article class="shot-card">
-            <img src="./image/planning.png" alt="Planning des logements et interventions sur CleanUp Manager">
+            <button class="shot-button" type="button" data-full="./image/planning.png" data-alt="Planning des logements et interventions sur CleanUp Manager">
+              <img src="./image/planning.png" alt="Planning des logements et interventions sur CleanUp Manager">
+            </button>
             <div class="shot-body">
               <h3>Planning</h3>
               <p>Visualisation claire des réservations, départs, arrivées et prestations à déclencher.</p>
@@ -727,7 +771,9 @@
           </article>
 
           <article class="shot-card">
-            <img src="./image/agent.png" alt="Gestion des agents et interventions sur CleanUp Manager">
+            <button class="shot-button" type="button" data-full="./image/agent.png" data-alt="Gestion des agents et interventions sur CleanUp Manager">
+              <img src="./image/agent.png" alt="Gestion des agents et interventions sur CleanUp Manager">
+            </button>
             <div class="shot-body">
               <h3>Agents & production</h3>
               <p>Attribution des missions, suivi des tâches et validation terrain.</p>
@@ -735,7 +781,9 @@
           </article>
 
           <article class="shot-card">
-            <img src="./image/comptabilit%C3%A9.png" alt="Module comptabilité devis factures sur CleanUp Manager">
+            <button class="shot-button" type="button" data-full="./image/comptabilite.png" data-alt="Module comptabilité devis factures sur CleanUp Manager">
+              <img src="./image/comptabilite.png" alt="Module comptabilité devis factures sur CleanUp Manager">
+            </button>
             <div class="shot-body">
               <h3>Comptabilité</h3>
               <p>Documents commerciaux et logique de suivi plus propre pour la conciergerie.</p>
@@ -743,7 +791,9 @@
           </article>
 
           <article class="shot-card">
-            <img src="./image/proprietaire.png" alt="Espace propriétaire dans CleanUp Manager">
+            <button class="shot-button" type="button" data-full="./image/proprietaire.png" data-alt="Espace propriétaire dans CleanUp Manager">
+              <img src="./image/proprietaire.png" alt="Espace propriétaire dans CleanUp Manager">
+            </button>
             <div class="shot-body">
               <h3>Espace propriétaire</h3>
               <p>Une relation plus cadrée avec le propriétaire, sans échange dispersé.</p>
@@ -751,7 +801,9 @@
           </article>
 
           <article class="shot-card">
-            <img src="./image/tarifs.png" alt="Tarifs du logiciel de conciergerie CleanUp Manager">
+            <button class="shot-button" type="button" data-full="./image/tarifs.png" data-alt="Tarifs du logiciel de conciergerie CleanUp Manager">
+              <img src="./image/tarifs.png" alt="Tarifs du logiciel de conciergerie CleanUp Manager">
+            </button>
             <div class="shot-body">
               <h3>Tarifs</h3>
               <p>Une logique simple : abonnement mensuel, pas de commission sur l’activité.</p>
@@ -765,9 +817,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Tarifs</h2>
-          <p>
-            Des plans simples selon le nombre de logements gérés.
-          </p>
+          <p>Des plans simples selon le nombre de logements gérés.</p>
         </div>
 
         <div class="pricing">
@@ -823,7 +873,7 @@
           <article class="price-card">
             <p class="price-name">Sur devis</p>
             <p class="price-range">41 logements et +</p>
-            <div class="price-value">Par mail</div>
+            <div class="price-value" style="font-size:24px;">Par mail</div>
             <ul class="price-list">
               <li>Besoin plus important</li>
               <li>Volume sur mesure</li>
@@ -844,7 +894,7 @@
         <div class="faq">
           <article class="faq-card">
             <h3>À qui s’adresse CleanUp Manager ?</h3>
-            <p>Aux conciergeries Airbnb et gestionnaires de locations courte durée qui veulent structurer leur organisation.</p>
+            <p>Aux conciergeries et gestionnaires de locations courte durée qui veulent structurer leur organisation.</p>
           </article>
 
           <article class="faq-card">
@@ -859,7 +909,7 @@
 
           <article class="faq-card">
             <h3>Comment créer mon compte ?</h3>
-            <p>Directement sur <strong>cleanup-manager.fr</strong>. La vitrine sert à présenter le logiciel, pas à doubler les parcours.</p>
+            <p>Directement sur <strong>cleanup-manager.fr</strong>. La vitrine présente le logiciel, le compte se crée sur la plateforme.</p>
           </article>
         </div>
 
@@ -880,9 +930,54 @@
         <img src="./image/logo.png" alt="Logo CleanUp Manager">
         <span>© 2026 CleanUp Manager</span>
       </div>
-      <div>Logiciel de conciergerie Airbnb et location courte durée</div>
+      <div>Logiciel de conciergerie et location courte durée</div>
     </div>
   </footer>
 
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">×</button>
+      <img id="lightboxImage" src="" alt="">
+    </div>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const shotButtons = document.querySelectorAll('.shot-button');
+
+    shotButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const full = button.getAttribute('data-full');
+        const alt = button.getAttribute('data-alt') || '';
+        lightboxImage.src = full;
+        lightboxImage.alt = alt;
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImage.src = '';
+      lightboxImage.alt = '';
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>
