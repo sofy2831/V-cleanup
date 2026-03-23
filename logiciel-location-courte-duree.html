@@ -1,1 +1,592 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Logiciel location courte durée | CleanUp Manager</title>
+  <meta name="description" content="Logiciel de location courte durée pour gérer logements, réservations, interventions, ménage, agents, photos et facturation. CleanUp Manager aide les conciergeries et gestionnaires à structurer leur activité." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#7A5CFF" />
+
+  <link rel="canonical" href="https://logiciel-conciergerie.cleanup-manager.fr/logiciel-location-courte-duree.html" />
+  <link rel="icon" href="./image/logo.png" />
+
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Logiciel location courte durée | CleanUp Manager" />
+  <meta property="og:description" content="Le logiciel pour gérer une activité de location courte durée : planning, interventions, agents, photos et facturation." />
+  <meta property="og:url" content="https://logiciel-conciergerie.cleanup-manager.fr/logiciel-location-courte-duree.html" />
+  <meta property="og:site_name" content="CleanUp Manager" />
+  <meta property="og:image" content="https://logiciel-conciergerie.cleanup-manager.fr/image/logo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Logiciel location courte durée | CleanUp Manager" />
+  <meta name="twitter:description" content="Planning, logements, agents, photos et facturation pour les locations courte durée." />
+  <meta name="twitter:image" content="https://logiciel-conciergerie.cleanup-manager.fr/image/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --violet:#7A5CFF;
+      --violet-dark:#5E39FF;
+      --bg:#F8F7FF;
+      --card:#FFFFFF;
+      --text:#111111;
+      --muted:#62697A;
+      --border:rgba(122,92,255,.16);
+      --shadow:0 16px 40px rgba(49,33,110,.08);
+      --shadow-strong:0 24px 60px rgba(48,30,118,.14);
+      --radius:22px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    a{ color:inherit; text-decoration:none; }
+
+    .container{
+      width:100%;
+      max-width:1120px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(10px);
+      background:rgba(248,247,255,.88);
+      border-bottom:1px solid rgba(122,92,255,.08);
+    }
+
+    .topbar-inner{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      font-weight:900;
+      font-size:24px;
+    }
+
+    .brand-badge{
+      width:120px;
+      height:72px;
+      border-radius:24px;
+      background:#fff;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      flex-shrink:0;
+      padding:6px;
+    }
+
+    .brand-badge img{
+      width:84px;
+      height:84px;
+      object-fit:contain;
+      display:block;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .nav a{
+      font-size:14px;
+      font-weight:800;
+      color:#4D5260;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:50px;
+      padding:0 18px;
+      border-radius:15px;
+      font-size:14px;
+      font-weight:800;
+      border:1px solid transparent;
+      transition:.18s ease;
+      cursor:pointer;
+    }
+
+    .btn:hover{ transform:translateY(-1px); }
+
+    .btn-primary{
+      color:#fff;
+      background:linear-gradient(135deg,var(--violet),var(--violet-dark));
+      box-shadow:0 14px 28px rgba(94,57,255,.22);
+    }
+
+    .hero{
+      padding:56px 0 30px;
+    }
+
+    .hero-wrap{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      padding:9px 13px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--border);
+      font-size:12px;
+      font-weight:900;
+      color:#5B45C8;
+      box-shadow:var(--shadow);
+      margin-bottom:16px;
+    }
+
+    h1{
+      margin:0 0 16px;
+      font-size:50px;
+      line-height:1.03;
+      letter-spacing:-1.4px;
+    }
+
+    .hero p{
+      margin:0;
+      max-width:720px;
+      font-size:18px;
+      line-height:1.7;
+      color:var(--muted);
+    }
+
+    .hero-card{
+      background:linear-gradient(180deg,#FFFFFF 0%, #F4EEFF 100%);
+      border:1px solid var(--border);
+      border-radius:30px;
+      box-shadow:var(--shadow-strong);
+      padding:18px;
+    }
+
+    .hero-card img{
+      width:100%;
+      display:block;
+      border-radius:20px;
+      border:1px solid rgba(122,92,255,.10);
+      background:#fff;
+    }
+
+    .section{
+      padding:34px 0;
+    }
+
+    .section-head{
+      max-width:820px;
+      margin-bottom:22px;
+    }
+
+    .section-head h2{
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.1;
+      letter-spacing:-.8px;
+    }
+
+    .section-head p{
+      margin:0;
+      font-size:16px;
+      line-height:1.7;
+      color:var(--muted);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:18px;
+      font-weight:900;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    .content{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .content-block,
+    .aside-box{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:24px;
+    }
+
+    .content-block h2{
+      margin:0 0 12px;
+      font-size:30px;
+      line-height:1.1;
+    }
+
+    .content-block p{
+      margin:0 0 16px;
+      font-size:16px;
+      line-height:1.75;
+      color:#2E3440;
+    }
+
+    .content-block p:last-child{
+      margin-bottom:0;
+    }
+
+    .aside-box h3{
+      margin:0 0 12px;
+      font-size:18px;
+      font-weight:900;
+    }
+
+    .aside-box ul{
+      margin:0;
+      padding-left:18px;
+      color:#2E3440;
+    }
+
+    .aside-box li{
+      margin:10px 0;
+      line-height:1.6;
+      font-size:14px;
+    }
+
+    .cta-final{
+      margin-top:18px;
+      border-radius:30px;
+      padding:42px 28px;
+      background:linear-gradient(135deg,var(--violet),var(--violet-dark));
+      color:#fff;
+      text-align:center;
+      box-shadow:0 26px 54px rgba(94,57,255,.22);
+    }
+
+    .cta-final h2{
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.08;
+    }
+
+    .cta-final p{
+      margin:0 auto 20px;
+      max-width:760px;
+      color:rgba(255,255,255,.92);
+      font-size:16px;
+      line-height:1.7;
+    }
+
+    .cta-final .btn-primary{
+      background:#fff;
+      color:var(--violet-dark);
+      box-shadow:0 12px 24px rgba(0,0,0,.16);
+    }
+
+    footer{
+      padding:34px 0 46px;
+    }
+
+    .footer-wrap{
+      border-top:1px solid rgba(122,92,255,.10);
+      padding-top:20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      color:#676B76;
+      font-size:14px;
+    }
+
+    .footer-brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+    }
+
+    .footer-brand img{
+      width:34px;
+      height:34px;
+      object-fit:contain;
+    }
+
+    @media (max-width:980px){
+      .hero-wrap,
+      .grid,
+      .content{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:860px){
+      .topbar-inner{
+        align-items:flex-start;
+        padding:12px 0;
+      }
+
+      .nav{
+        justify-content:flex-end;
+      }
+
+      h1{
+        font-size:38px;
+        letter-spacing:-1px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .section-head h2,
+      .content-block h2,
+      .cta-final h2{
+        font-size:28px;
+      }
+
+      .brand{
+        font-size:16px;
+        gap:12px;
+      }
+
+      .brand-badge{
+        width:96px;
+        height:64px;
+        border-radius:20px;
+        padding:4px;
+      }
+
+      .brand-badge img{
+        width:78px;
+        height:78px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Logiciel location courte durée | CleanUp Manager",
+    "url":"https://logiciel-conciergerie.cleanup-manager.fr/logiciel-location-courte-duree.html",
+    "description":"Logiciel de location courte durée pour gérer logements, réservations, interventions, agents, photos et facturation.",
+    "isPartOf":{
+      "@type":"WebSite",
+      "name":"CleanUp Manager",
+      "url":"https://logiciel-conciergerie.cleanup-manager.fr/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html" aria-label="Accueil CleanUp Manager">
+        <span class="brand-badge">
+          <img src="./image/logo.png" alt="Logo CleanUp Manager">
+        </span>
+        <span>CleanUp Manager</span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="./index.html#fonctionnalites">Fonctionnalités</a>
+        <a href="./index.html#captures">Captures</a>
+        <a href="./index.html#tarifs">Tarifs</a>
+        <a href="./index.html#faq">FAQ</a>
+        <a class="btn btn-primary" href="https://cleanup-manager.fr/">Créer mon compte gratuit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div>
+          <div class="eyebrow">Logiciel location courte durée • conciergerie • gestion multi-plateformes</div>
+          <h1>Logiciel location courte durée pour gérer logements, réservations et interventions</h1>
+          <p>
+            Un bon logiciel de location courte durée ne sert pas juste à afficher un planning.
+            Il doit relier les réservations, les départs, le ménage, les agents, les preuves photos
+            et la facturation dans une seule logique. C’est exactement le rôle de CleanUp Manager :
+            aider les conciergeries et gestionnaires à piloter une activité propre, rentable et moins chaotique.
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <img src="./image/planning.png" alt="Planning de gestion location courte durée sur CleanUp Manager">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Pourquoi utiliser un logiciel de location courte durée</h2>
+          <p>
+            Dès que le volume augmente, la gestion artisanale finit par coûter cher : oublis, retards,
+            informations dispersées, photos introuvables, factures faites trop tard ou missions mal attribuées.
+            Un logiciel dédié sert à remettre de l’ordre.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Planning centralisé</h3>
+            <p>Visualisez les arrivées, départs, logements et prestations à déclencher sans bricoler entre plusieurs outils.</p>
+          </article>
+          <article class="card">
+            <h3>Suivi des interventions</h3>
+            <p>Chaque mission peut être affectée, suivie, validée et documentée avec plus de clarté.</p>
+          </article>
+          <article class="card">
+            <h3>Gestion plus rentable</h3>
+            <p>Moins de pertes de temps, moins d’erreurs, plus de cadre pour développer une vraie activité de gestion.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container content">
+        <div class="content-block">
+          <h2>Un outil conçu pour les conciergeries et gestionnaires terrain</h2>
+
+          <p>
+            Beaucoup d’outils parlent de location courte durée, mais s’arrêtent au calendrier ou à la réservation.
+            Dans la vraie vie, une conciergerie doit gérer bien plus : départs voyageurs, ménage, blanchisserie,
+            consommables, agents, preuves photos, litiges, devis, factures et relation propriétaire.
+          </p>
+
+          <p>
+            CleanUp Manager a été pensé pour cette réalité opérationnelle. L’objectif n’est pas de vendre une interface
+            “jolie”, mais un outil utile. Vous suivez les logements, vous planifiez les interventions, vous récupérez
+            les preuves terrain et vous gardez une vue claire sur la facturation.
+          </p>
+
+          <p>
+            Pour une activité de location courte durée, ce cadre fait gagner du temps et évite surtout les erreurs
+            qui coûtent cher : ménage oublié, mission mal transmise, photo absente, facture retardée ou suivi flou.
+          </p>
+        </div>
+
+        <aside class="aside-box">
+          <h3>Ce que doit couvrir un bon logiciel</h3>
+          <ul>
+            <li>Gestion des logements et réservations</li>
+            <li>Planning des départs et arrivées</li>
+            <li>Affectation des agents ou prestataires</li>
+            <li>Suivi des interventions de ménage</li>
+            <li>Preuves photos et validations</li>
+            <li>Devis, factures et règlements</li>
+            <li>Vue plus propre côté propriétaire</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container content">
+        <div class="content-block">
+          <h2>Logiciel location courte durée : pour qui ?</h2>
+
+          <p>
+            Cette page s’adresse aux conciergeries Airbnb, aux gestionnaires Booking.com, aux exploitants de locations
+            saisonnières et à tous ceux qui ont besoin d’un outil simple pour relier l’opérationnel et la gestion.
+          </p>
+
+          <p>
+            Que vous gériez quelques logements ou un parc plus structuré, le besoin reste le même : centraliser
+            les informations pour éviter le chaos et garder la maîtrise de votre activité.
+          </p>
+        </div>
+
+        <aside class="aside-box">
+          <h3>Profils concernés</h3>
+          <ul>
+            <li>Conciergerie indépendante</li>
+            <li>Gestionnaire multi-logements</li>
+            <li>Exploitant location saisonnière</li>
+            <li>Structure en croissance</li>
+            <li>Équipe avec agents terrain</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-final">
+          <h2>Passez d’une gestion bricolée à une gestion structurée</h2>
+          <p>
+            CleanUp Manager vous aide à centraliser votre activité de location courte durée :
+            planning, logements, interventions, agents, photos et facturation dans un seul outil.
+          </p>
+          <a class="btn btn-primary" href="https://cleanup-manager.fr/">Créer mon compte gratuit</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div class="footer-brand">
+        <img src="./image/logo.png" alt="Logo CleanUp Manager">
+        <span>© 2026 CleanUp Manager</span>
+      </div>
+      <div>Logiciel de conciergerie et location courte durée</div>
+    </div>
+  </footer>
+</body>
+</html>
