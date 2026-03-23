@@ -4,19 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>CleanUp Manager – Logiciel de conciergerie Airbnb et location courte durée</title>
-  <meta name="description" content="CleanUp Manager est le logiciel de conciergerie pour gérer logements, réservations, missions, photos, agents, devis et factures. Gratuit jusqu’à 2 logements. Zéro commission." />
-  <meta name="keywords" content="logiciel conciergerie, logiciel conciergerie airbnb, logiciel location courte durée, gestion conciergerie, planning ménage airbnb, logiciel gestion logements, logiciel devis facture conciergerie" />
-  <meta name="robots" content="index,follow" />
+  <title>CleanUp Manager | Logiciel de conciergerie Airbnb et location courte durée</title>
+  <meta name="description" content="CleanUp Manager est un logiciel de conciergerie Airbnb et location courte durée : planning, logements, interventions, agents, preuves photos, devis, factures et suivi propriétaire. Gratuit jusqu’à 2 logements, sans commission." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#7A5CFF" />
+  <meta name="author" content="CleanUp Manager" />
+  <meta name="keywords" content="logiciel conciergerie, logiciel conciergerie airbnb, logiciel location courte durée, logiciel gestion airbnb, planning conciergerie, logiciel ménage airbnb, logiciel facturation conciergerie, logiciel gestion logements, conciergerie location saisonnière" />
 
-  <meta property="og:title" content="CleanUp Manager – Logiciel de conciergerie Airbnb" />
-  <meta property="og:description" content="Planning, missions, photos, agents, devis et factures dans un seul outil. Gratuit jusqu’à 2 logements. Zéro commission." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="./logo-cleanup-icon.png" />
+  <link rel="canonical" href="https://sofy2831.github.io/V-cleanup/" />
+  <link rel="icon" href="./image/logo.png" />
+
   <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CleanUp Manager | Logiciel de conciergerie Airbnb et location courte durée" />
+  <meta property="og:description" content="Planning, logements, missions, agents, photos, devis et factures dans un seul outil. Gratuit jusqu’à 2 logements. Sans commission." />
+  <meta property="og:url" content="https://sofy2831.github.io/V-cleanup/" />
+  <meta property="og:site_name" content="CleanUp Manager" />
+  <meta property="og:image" content="https://sofy2831.github.io/V-cleanup/image/logo.png" />
 
-  <link rel="icon" href="./logo-cleanup-icon.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CleanUp Manager | Logiciel de conciergerie Airbnb" />
+  <meta name="twitter:description" content="Le logiciel pour structurer une conciergerie : planning, interventions, agents, photos, devis et factures." />
+  <meta name="twitter:image" content="https://sofy2831.github.io/V-cleanup/image/logo.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -29,10 +39,11 @@
       --bg:#F8F7FF;
       --card:#FFFFFF;
       --text:#111111;
-      --muted:#5F6470;
+      --muted:#62697A;
       --border:rgba(122,92,255,.16);
-      --shadow:0 14px 34px rgba(49,33,110,.08);
-      --radius:20px;
+      --shadow:0 16px 40px rgba(49,33,110,.08);
+      --shadow-strong:0 24px 60px rgba(48,30,118,.14);
+      --radius:22px;
       --ok:#18854B;
       --gold:#FFC85A;
     }
@@ -48,11 +59,19 @@
       color:var(--text);
     }
 
-    a{ color:inherit; }
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
 
     .container{
       width:100%;
-      max-width:1160px;
+      max-width:1180px;
       margin:0 auto;
       padding:0 20px;
     }
@@ -67,53 +86,51 @@
     }
 
     .topbar-inner{
+      min-height:74px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:16px;
-      min-height:72px;
+      gap:18px;
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
-      text-decoration:none;
       font-weight:900;
       font-size:18px;
     }
 
     .brand-badge{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      width:42px;
-      height:42px;
-      border-radius:14px;
+      width:46px;
+      height:46px;
+      border-radius:15px;
       background:#fff;
       border:1px solid var(--border);
       box-shadow:var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:center;
       overflow:hidden;
       flex-shrink:0;
     }
 
     .brand-badge img{
-      width:28px;
-      height:28px;
+      width:34px;
+      height:34px;
       object-fit:contain;
     }
 
     .nav{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:16px;
       flex-wrap:wrap;
     }
 
-    .nav a{
-      text-decoration:none;
+    .nav-link{
       font-size:14px;
-      font-weight:700;
+      font-weight:800;
       color:#4D5260;
     }
 
@@ -122,12 +139,11 @@
       align-items:center;
       justify-content:center;
       gap:8px;
-      min-height:48px;
+      min-height:50px;
       padding:0 18px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:800;
+      border-radius:15px;
       font-size:14px;
+      font-weight:800;
       border:1px solid transparent;
       transition:.18s ease;
       cursor:pointer;
@@ -138,9 +154,9 @@
     }
 
     .btn-primary{
-      background:linear-gradient(135deg,var(--violet),var(--violet-dark));
       color:#fff;
-      box-shadow:0 14px 26px rgba(94,57,255,.22);
+      background:linear-gradient(135deg,var(--violet),var(--violet-dark));
+      box-shadow:0 14px 28px rgba(94,57,255,.22);
     }
 
     .btn-secondary{
@@ -151,13 +167,13 @@
     }
 
     .hero{
-      padding:58px 0 34px;
+      padding:54px 0 22px;
     }
 
     .hero-wrap{
       display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:28px;
+      grid-template-columns:1.02fr .98fr;
+      gap:30px;
       align-items:center;
     }
 
@@ -165,31 +181,30 @@
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding:8px 12px;
+      padding:9px 13px;
       border-radius:999px;
       background:#fff;
       border:1px solid var(--border);
       font-size:12px;
-      font-weight:800;
+      font-weight:900;
       color:#5B45C8;
       box-shadow:var(--shadow);
       margin-bottom:16px;
     }
 
-    .hero h1{
+    h1{
+      margin:0 0 16px;
       font-size:54px;
       line-height:1.02;
       letter-spacing:-1.6px;
-      margin:0 0 16px;
-      font-weight:900;
     }
 
     .hero p{
+      margin:0 0 24px;
+      max-width:680px;
       font-size:18px;
       line-height:1.65;
       color:var(--muted);
-      margin:0 0 24px;
-      max-width:720px;
     }
 
     .hero-actions{
@@ -201,9 +216,8 @@
 
     .hero-points{
       display:flex;
-      flex-wrap:wrap;
       gap:10px;
-      margin-top:10px;
+      flex-wrap:wrap;
     }
 
     .pill{
@@ -220,48 +234,23 @@
       box-shadow:var(--shadow);
     }
 
-    .hero-card{
+    .hero-visual{
       background:linear-gradient(180deg,#FFFFFF 0%, #F4EEFF 100%);
       border:1px solid var(--border);
-      border-radius:28px;
-      box-shadow:0 24px 60px rgba(48,30,118,.12);
-      padding:22px;
+      border-radius:30px;
+      box-shadow:var(--shadow-strong);
+      padding:18px;
     }
 
-    .mini-app{
-      display:grid;
-      gap:14px;
-    }
-
-    .mini-row{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:12px;
-    }
-
-    .mini-box{
+    .hero-visual img{
+      width:100%;
+      border-radius:20px;
+      border:1px solid rgba(122,92,255,.10);
       background:#fff;
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:16px;
-      box-shadow:var(--shadow);
-    }
-
-    .mini-box h3{
-      margin:0 0 8px;
-      font-size:14px;
-      font-weight:900;
-    }
-
-    .mini-box p{
-      margin:0;
-      font-size:13px;
-      color:var(--muted);
-      line-height:1.45;
     }
 
     .section{
-      padding:34px 0;
+      padding:38px 0;
     }
 
     .section-head{
@@ -270,31 +259,63 @@
     }
 
     .section-head h2{
-      font-size:34px;
-      line-height:1.1;
       margin:0 0 10px;
-      letter-spacing:-.8px;
+      font-size:35px;
+      line-height:1.08;
+      letter-spacing:-.9px;
     }
 
     .section-head p{
       margin:0;
-      color:var(--muted);
       font-size:16px;
       line-height:1.65;
+      color:var(--muted);
     }
 
-    .grid{
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .stat-card,
+    .card,
+    .shot-card,
+    .price-card,
+    .faq-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    .stat-card{
+      padding:22px;
+    }
+
+    .stat-big{
+      font-size:32px;
+      font-weight:900;
+      line-height:1;
+      color:var(--violet-dark);
+      margin-bottom:8px;
+    }
+
+    .stat-card p{
+      margin:0;
+      font-size:14px;
+      color:var(--muted);
+      line-height:1.55;
+    }
+
+    .feature-grid{
       display:grid;
       grid-template-columns:repeat(4,minmax(0,1fr));
       gap:18px;
     }
 
     .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
       padding:22px;
-      box-shadow:var(--shadow);
     }
 
     .card h3{
@@ -305,51 +326,54 @@
 
     .card p{
       margin:0;
-      color:var(--muted);
       font-size:14px;
+      color:var(--muted);
       line-height:1.6;
     }
 
-    .problem{
-      border-left:5px solid rgba(179,38,30,.2);
-    }
-
-    .problem h3{ color:#222; }
-
-    .feature{
-      border-left:5px solid rgba(24,133,75,.18);
-    }
-
-    .compare{
+    .screens-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:repeat(3,minmax(0,1fr));
       gap:18px;
     }
 
-    .list{
-      margin:0;
-      padding-left:18px;
-      color:#333;
+    .shot-card{
+      overflow:hidden;
     }
 
-    .list li{
-      margin:10px 0;
+    .shot-card img{
+      width:100%;
+      aspect-ratio:16/11;
+      object-fit:cover;
+      background:#fff;
+    }
+
+    .shot-body{
+      padding:16px 16px 18px;
+    }
+
+    .shot-body h3{
+      margin:0 0 8px;
+      font-size:16px;
+      font-weight:900;
+    }
+
+    .shot-body p{
+      margin:0;
+      font-size:14px;
+      color:var(--muted);
       line-height:1.55;
     }
 
     .pricing{
       display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
+      grid-template-columns:repeat(5,minmax(0,1fr));
       gap:18px;
       align-items:stretch;
     }
 
     .price-card{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:24px;
-      padding:24px;
-      box-shadow:var(--shadow);
+      padding:22px;
       display:flex;
       flex-direction:column;
       gap:12px;
@@ -357,7 +381,7 @@
     }
 
     .price-card.featured{
-      border:2px solid rgba(122,92,255,.55);
+      border:2px solid rgba(122,92,255,.48);
       box-shadow:0 22px 50px rgba(94,57,255,.16);
       transform:translateY(-2px);
     }
@@ -376,96 +400,87 @@
     }
 
     .price-name{
-      font-size:22px;
-      font-weight:900;
       margin:0;
+      font-size:21px;
+      font-weight:900;
     }
 
     .price-range{
-      color:var(--muted);
-      font-size:14px;
       margin:0;
+      font-size:14px;
+      color:var(--muted);
     }
 
     .price-value{
-      font-size:38px;
+      margin:2px 0 0;
+      font-size:34px;
+      line-height:1;
       font-weight:900;
       color:var(--violet-dark);
-      line-height:1;
-      margin:2px 0 0;
     }
 
     .price-value small{
       font-size:14px;
-      color:var(--muted);
       font-weight:800;
+      color:var(--muted);
     }
 
     .price-list{
       margin:0;
       padding-left:18px;
-      color:#333;
       flex:1;
+      color:#333;
     }
 
     .price-list li{
       margin:8px 0;
-      line-height:1.5;
       font-size:14px;
-    }
-
-    .trust{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:18px;
+      line-height:1.5;
     }
 
     .faq{
       display:grid;
-      gap:14px;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
     }
 
-    details{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:16px 18px;
-      box-shadow:var(--shadow);
+    .faq-card{
+      padding:20px;
     }
 
-    summary{
-      cursor:pointer;
-      font-weight:800;
-      font-size:15px;
+    .faq-card h3{
+      margin:0 0 10px;
+      font-size:16px;
+      font-weight:900;
     }
 
-    details p{
-      margin:12px 0 0;
+    .faq-card p{
+      margin:0;
       color:var(--muted);
-      line-height:1.6;
       font-size:14px;
+      line-height:1.6;
     }
 
     .cta-final{
-      margin-top:24px;
-      background:linear-gradient(135deg,var(--violet),var(--violet-dark));
-      color:#fff;
+      margin-top:18px;
       border-radius:30px;
       padding:42px 28px;
-      box-shadow:0 26px 54px rgba(94,57,255,.22);
+      background:linear-gradient(135deg,var(--violet),var(--violet-dark));
+      color:#fff;
       text-align:center;
+      box-shadow:0 26px 54px rgba(94,57,255,.22);
     }
 
     .cta-final h2{
       margin:0 0 10px;
       font-size:34px;
-      line-height:1.1;
+      line-height:1.08;
     }
 
     .cta-final p{
       margin:0 auto 20px;
-      max-width:720px;
-      color:rgba(255,255,255,.88);
+      max-width:760px;
+      color:rgba(255,255,255,.90);
       font-size:16px;
       line-height:1.65;
     }
@@ -477,43 +492,46 @@
     }
 
     footer{
-      padding:42px 0 60px;
+      padding:34px 0 46px;
     }
 
     .footer-wrap{
+      border-top:1px solid rgba(122,92,255,.10);
+      padding-top:20px;
       display:flex;
+      align-items:center;
       justify-content:space-between;
-      gap:18px;
+      gap:14px;
       flex-wrap:wrap;
       color:#676B76;
       font-size:14px;
-      border-top:1px solid rgba(122,92,255,.10);
-      padding-top:22px;
     }
 
-    .footer-links{
+    .footer-brand{
       display:flex;
-      gap:16px;
-      flex-wrap:wrap;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
     }
 
-    .footer-links a{
-      text-decoration:none;
-      color:#676B76;
-      font-weight:700;
+    .footer-brand img{
+      width:26px;
+      height:26px;
+      object-fit:contain;
     }
 
-    @media (max-width:1040px){
+    @media (max-width:1120px){
       .hero-wrap,
-      .grid,
+      .feature-grid,
       .pricing,
-      .trust,
-      .compare{
+      .screens-grid,
+      .faq,
+      .stats{
         grid-template-columns:1fr 1fr;
       }
     }
 
-    @media (max-width:720px){
+    @media (max-width:760px){
       .topbar-inner{
         align-items:flex-start;
         padding:12px 0;
@@ -527,7 +545,7 @@
         padding-top:34px;
       }
 
-      .hero h1{
+      h1{
         font-size:38px;
         letter-spacing:-1px;
       }
@@ -537,11 +555,11 @@
       }
 
       .hero-wrap,
-      .grid,
+      .feature-grid,
       .pricing,
-      .trust,
-      .compare,
-      .mini-row{
+      .screens-grid,
+      .faq,
+      .stats{
         grid-template-columns:1fr;
       }
 
@@ -551,7 +569,7 @@
       }
 
       .price-value{
-        font-size:32px;
+        font-size:30px;
       }
     }
   </style>
@@ -563,11 +581,19 @@
     "name":"CleanUp Manager",
     "applicationCategory":"BusinessApplication",
     "operatingSystem":"Web",
-    "description":"Logiciel de conciergerie pour gérer logements, réservations, missions, agents, photos, devis et factures.",
+    "url":"https://sofy2831.github.io/V-cleanup/",
+    "image":"https://sofy2831.github.io/V-cleanup/image/logo.png",
+    "description":"Logiciel de conciergerie Airbnb et location courte durée pour gérer planning, logements, interventions, agents, preuves photos, devis et factures.",
     "offers":{
-      "@type":"Offer",
-      "price":"0",
-      "priceCurrency":"EUR"
+      "@type":"AggregateOffer",
+      "priceCurrency":"EUR",
+      "lowPrice":"0",
+      "highPrice":"299.90",
+      "offerCount":"4"
+    },
+    "publisher":{
+      "@type":"Organization",
+      "name":"CleanUp Manager"
     }
   }
   </script>
@@ -576,19 +602,19 @@
 
   <header class="topbar">
     <div class="container topbar-inner">
-      <a class="brand" href="#top">
+      <a class="brand" href="#top" aria-label="Accueil CleanUp Manager">
         <span class="brand-badge">
-          <img src="./logo-cleanup-icon.png" alt="Logo CleanUp Manager">
+          <img src="./image/logo.png" alt="Logo CleanUp Manager">
         </span>
         <span>CleanUp Manager</span>
       </a>
 
-      <nav class="nav">
-        <a href="#fonctionnalites">Fonctionnalités</a>
-        <a href="#tarifs">Tarifs</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn btn-secondary" href="login.html">Connexion</a>
-        <a class="btn btn-primary" href="login.html">Créer mon compte</a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav-link" href="#fonctionnalites">Fonctionnalités</a>
+        <a class="nav-link" href="#captures">Captures</a>
+        <a class="nav-link" href="#tarifs">Tarifs</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="btn btn-primary" href="https://cleanup-manager.fr/">Créer mon compte</a>
       </nav>
     </div>
   </header>
@@ -599,80 +625,46 @@
         <div>
           <div class="eyebrow">Logiciel conciergerie • Airbnb • location courte durée</div>
 
-          <h1>Le logiciel qui structure votre conciergerie sans commission</h1>
+          <h1>Le logiciel de conciergerie pour piloter planning, agents, photos et facturation</h1>
 
           <p>
-            CleanUp Manager centralise le planning, les logements, les missions, les agents,
-            les preuves photos, les devis et les factures. Vous remplacez les tableaux bricolés,
-            les oublis WhatsApp et la gestion dispersée par un outil clair, concret et rentable.
+            CleanUp Manager aide les conciergeries Airbnb et locations courte durée à gérer
+            leurs logements, réservations, interventions, preuves photos, devis et factures
+            dans un seul outil, sans commission.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="login.html">Créer mon compte gratuit</a>
-            <a class="btn btn-secondary" href="#tarifs">Voir les tarifs</a>
+            <a class="btn btn-primary" href="https://cleanup-manager.fr/">Créer mon compte gratuit</a>
+            <a class="btn btn-secondary" href="#captures">Voir l’interface</a>
           </div>
 
           <div class="hero-points">
             <span class="pill">Gratuit jusqu’à 2 logements</span>
-            <span class="pill">Zéro commission</span>
+            <span class="pill">Sans commission</span>
             <span class="pill">Pensé pour les conciergeries terrain</span>
           </div>
         </div>
 
-        <div class="hero-card">
-          <div class="mini-app">
-            <div class="mini-row">
-              <div class="mini-box">
-                <h3>Planning centralisé</h3>
-                <p>Réservations, logements et interventions réunis au même endroit.</p>
-              </div>
-              <div class="mini-box">
-                <h3>Missions avec preuves</h3>
-                <p>Photos, validations et suivi agent sans courir après les infos.</p>
-              </div>
-            </div>
-
-            <div class="mini-row">
-              <div class="mini-box">
-                <h3>Facturation intégrée</h3>
-                <p>Devis, factures, règlements et recouvrement dans la même logique.</p>
-              </div>
-              <div class="mini-box">
-                <h3>Zéro commission</h3>
-                <p>Vous gardez 100% de vos revenus. L’outil ne prend pas sa part.</p>
-              </div>
-            </div>
-          </div>
+        <div class="hero-visual">
+          <img src="./image/tableau%20de%20bord.png" alt="Tableau de bord CleanUp Manager pour conciergerie">
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="section-head">
-          <h2>Le vrai problème des conciergeries</h2>
-          <p>
-            Quand tout passe par Excel, WhatsApp, notes et mémoire humaine, ça finit en retards,
-            oublis, photos perdues, factures dispersées et tension avec agents ou propriétaires.
-          </p>
-        </div>
-
-        <div class="grid">
-          <article class="card problem">
-            <h3>Organisation éclatée</h3>
-            <p>Un bout dans Excel, un bout dans WhatsApp, un bout dans la tête. Mauvaise idée.</p>
+        <div class="stats">
+          <article class="stat-card">
+            <div class="stat-big">1 seul outil</div>
+            <p>Planning, production, agents, photos, devis, factures et suivi propriétaire.</p>
           </article>
-          <article class="card problem">
-            <h3>Missions oubliées</h3>
-            <p>Départs, ménages, maintenances ou kits qui passent à la trappe.</p>
+          <article class="stat-card">
+            <div class="stat-big">0 commission</div>
+            <p>Vous gardez vos revenus. CleanUp Manager fonctionne à l’abonnement.</p>
           </article>
-          <article class="card problem">
-            <h3>Agents mal suivis</h3>
-            <p>Difficile de savoir qui a fait quoi, quand, avec quelle preuve.</p>
-          </article>
-          <article class="card problem">
-            <h3>Facturation dispersée</h3>
-            <p>Devis, factures et règlements séparés = perte de temps et erreurs.</p>
+          <article class="stat-card">
+            <div class="stat-big">2 logements gratuits</div>
+            <p>De quoi démarrer proprement avant de monter en charge.</p>
           </article>
         </div>
       </div>
@@ -681,76 +673,90 @@
     <section class="section" id="fonctionnalites">
       <div class="container">
         <div class="section-head">
-          <h2>Ce que CleanUp change concrètement</h2>
+          <h2>Les fonctions utiles, pas du décor</h2>
           <p>
-            CleanUp Manager n’est pas un gadget de plus. C’est une base de pilotage
-            pour une conciergerie qui veut bosser proprement et monter en gamme.
+            Le cœur du logiciel : gérer une conciergerie sans bricoler entre Excel, messages et mémoire humaine.
           </p>
         </div>
 
-        <div class="grid">
-          <article class="card feature">
+        <div class="feature-grid">
+          <article class="card">
             <h3>Planning conciergerie</h3>
-            <p>Visualisez logements, réservations, arrivées, départs et prestations à faire.</p>
+            <p>Réservations, arrivées, départs, logements et prestations au même endroit.</p>
           </article>
-          <article class="card feature">
-            <h3>Production & agents</h3>
-            <p>Affectez les interventions, suivez les statuts et récupérez les preuves terrain.</p>
+          <article class="card">
+            <h3>Interventions & agents</h3>
+            <p>Affectation des missions, statuts, validations et suivi terrain.</p>
           </article>
-          <article class="card feature">
-            <h3>Photos & validations</h3>
-            <p>Centralisez les photos de mission pour éviter les contestations et les zones floues.</p>
+          <article class="card">
+            <h3>Preuves photos</h3>
+            <p>Photos centralisées pour limiter les contestations et les flous.</p>
           </article>
-          <article class="card feature">
-            <h3>Devis & factures</h3>
-            <p>Émettez les documents commerciaux sans sortir de votre outil métier.</p>
-          </article>
-          <article class="card feature">
-            <h3>Recouvrement</h3>
-            <p>Repérez les factures à suivre et gardez une vue simple sur les impayés.</p>
-          </article>
-          <article class="card feature">
-            <h3>Suivi propriétaire</h3>
-            <p>Clarifiez la relation avec le propriétaire grâce à un cadre plus propre.</p>
-          </article>
-          <article class="card feature">
-            <h3>Import iCal</h3>
-            <p>Récupérez vos réservations pour garder un planning cohérent et exploitable.</p>
-          </article>
-          <article class="card feature">
-            <h3>Boutique kits</h3>
-            <p>Préparez une logique simple de vente ou gestion de kits / consommables.</p>
+          <article class="card">
+            <h3>Comptabilité simple</h3>
+            <p>Devis, factures, règlements et suivi commercial sans sortir du logiciel.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="captures">
       <div class="container">
         <div class="section-head">
-          <h2>Pourquoi ce logiciel est différent</h2>
+          <h2>Le logiciel en images</h2>
+          <p>
+            Voilà ce que voit une conciergerie dans CleanUp Manager. C’est plus parlant que 40 lignes de marketing.
+          </p>
         </div>
 
-        <div class="compare">
-          <div class="card">
-            <h3>Ce que vous gardez</h3>
-            <ul class="list">
-              <li>100% de vos revenus</li>
-              <li>Votre relation client</li>
-              <li>Votre organisation métier</li>
-              <li>Votre rythme de croissance</li>
-            </ul>
-          </div>
+        <div class="screens-grid">
+          <article class="shot-card">
+            <img src="./image/tableau%20de%20bord.png" alt="Tableau de bord du logiciel de conciergerie CleanUp Manager">
+            <div class="shot-body">
+              <h3>Tableau de bord</h3>
+              <p>Vue d’ensemble rapide sur l’activité, les blocs métiers et les actions utiles.</p>
+            </div>
+          </article>
 
-          <div class="card">
-            <h3>Ce que vous arrêtez</h3>
-            <ul class="list">
-              <li>Le bricolage Excel + WhatsApp</li>
-              <li>Les oublis de missions</li>
-              <li>Les preuves dispersées</li>
-              <li>Les outils qui prennent une commission</li>
-            </ul>
-          </div>
+          <article class="shot-card">
+            <img src="./image/planning.png" alt="Planning des logements et interventions sur CleanUp Manager">
+            <div class="shot-body">
+              <h3>Planning</h3>
+              <p>Visualisation claire des réservations, départs, arrivées et prestations à déclencher.</p>
+            </div>
+          </article>
+
+          <article class="shot-card">
+            <img src="./image/agent.png" alt="Gestion des agents et interventions sur CleanUp Manager">
+            <div class="shot-body">
+              <h3>Agents & production</h3>
+              <p>Attribution des missions, suivi des tâches et validation terrain.</p>
+            </div>
+          </article>
+
+          <article class="shot-card">
+            <img src="./image/comptabilit%C3%A9.png" alt="Module comptabilité devis factures sur CleanUp Manager">
+            <div class="shot-body">
+              <h3>Comptabilité</h3>
+              <p>Documents commerciaux et logique de suivi plus propre pour la conciergerie.</p>
+            </div>
+          </article>
+
+          <article class="shot-card">
+            <img src="./image/proprietaire.png" alt="Espace propriétaire dans CleanUp Manager">
+            <div class="shot-body">
+              <h3>Espace propriétaire</h3>
+              <p>Une relation plus cadrée avec le propriétaire, sans échange dispersé.</p>
+            </div>
+          </article>
+
+          <article class="shot-card">
+            <img src="./image/tarifs.png" alt="Tarifs du logiciel de conciergerie CleanUp Manager">
+            <div class="shot-body">
+              <h3>Tarifs</h3>
+              <p>Une logique simple : abonnement mensuel, pas de commission sur l’activité.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -758,9 +764,9 @@
     <section class="section" id="tarifs">
       <div class="container">
         <div class="section-head">
-          <h2>Tarifs simples, sans blabla</h2>
+          <h2>Tarifs</h2>
           <p>
-            Pas de commission, pas de montage tordu. Vous choisissez selon votre volume de logements.
+            Des plans simples selon le nombre de logements gérés.
           </p>
         </div>
 
@@ -770,11 +776,11 @@
             <p class="price-range">0 à 2 logements</p>
             <div class="price-value">0€ <small>/ mois</small></div>
             <ul class="price-list">
-              <li>Accès pour démarrer</li>
+              <li>Pour démarrer</li>
               <li>Base de gestion conciergerie</li>
-              <li>Idéal pour tester</li>
+              <li>Idéal pour tester l’outil</li>
             </ul>
-            <a class="btn btn-secondary" href="login.html">Commencer</a>
+            <a class="btn btn-secondary" href="https://cleanup-manager.fr/">Commencer</a>
           </article>
 
           <article class="price-card">
@@ -782,11 +788,11 @@
             <p class="price-range">3 à 5 logements</p>
             <div class="price-value">49,90€ <small>/ mois</small></div>
             <ul class="price-list">
-              <li>Planning + missions + agents</li>
-              <li>Photos et suivi terrain</li>
+              <li>Planning</li>
+              <li>Interventions & agents</li>
               <li>Base de facturation</li>
             </ul>
-            <a class="btn btn-secondary" href="abonnement.html?plan=starter">Choisir Starter</a>
+            <a class="btn btn-secondary" href="https://cleanup-manager.fr/">Choisir Starter</a>
           </article>
 
           <article class="price-card featured">
@@ -797,9 +803,9 @@
             <ul class="price-list">
               <li>Tout Starter</li>
               <li>Volume plus confortable</li>
-              <li>Pensé pour une vraie conciergerie active</li>
+              <li>Pour conciergerie active</li>
             </ul>
-            <a class="btn btn-primary" href="abonnement.html?plan=pro">Choisir Pro</a>
+            <a class="btn btn-primary" href="https://cleanup-manager.fr/">Choisir Pro</a>
           </article>
 
           <article class="price-card">
@@ -808,33 +814,22 @@
             <div class="price-value">299,90€ <small>/ mois</small></div>
             <ul class="price-list">
               <li>Tout Pro</li>
-              <li>Volume structuré</li>
-              <li>Conçu pour une organisation plus dense</li>
+              <li>Organisation plus dense</li>
+              <li>Plus gros volume d’activité</li>
             </ul>
-            <a class="btn btn-secondary" href="abonnement.html?plan=business">Choisir Business</a>
+            <a class="btn btn-secondary" href="https://cleanup-manager.fr/">Choisir Business</a>
           </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Ce que vous achetez vraiment</h2>
-        </div>
-
-        <div class="trust">
-          <article class="card">
-            <h3>Du temps récupéré</h3>
-            <p>Moins de relances inutiles, moins de recherche d’informations partout.</p>
-          </article>
-          <article class="card">
-            <h3>Moins d’erreurs</h3>
-            <p>Un cadre propre pour éviter les trous dans le planning et les oublis de mission.</p>
-          </article>
-          <article class="card">
-            <h3>Plus de contrôle</h3>
-            <p>Vous pilotez mieux votre activité sans multiplier les outils ni perdre votre marge.</p>
+          <article class="price-card">
+            <p class="price-name">Sur devis</p>
+            <p class="price-range">41 logements et +</p>
+            <div class="price-value">Par mail</div>
+            <ul class="price-list">
+              <li>Besoin plus important</li>
+              <li>Volume sur mesure</li>
+              <li>Étude selon votre structure</li>
+            </ul>
+            <a class="btn btn-secondary" href="mailto:contact@cleanup-manager.fr">Nous contacter</a>
           </article>
         </div>
       </div>
@@ -847,33 +842,33 @@
         </div>
 
         <div class="faq">
-          <details>
-            <summary>À qui s’adresse CleanUp Manager ?</summary>
-            <p>Aux conciergeries Airbnb et gestionnaires de locations courte durée qui veulent structurer planning, interventions, agents et facturation.</p>
-          </details>
+          <article class="faq-card">
+            <h3>À qui s’adresse CleanUp Manager ?</h3>
+            <p>Aux conciergeries Airbnb et gestionnaires de locations courte durée qui veulent structurer leur organisation.</p>
+          </article>
 
-          <details>
-            <summary>Y a-t-il une commission sur les réservations ou les prestations ?</summary>
-            <p>Non. CleanUp Manager fonctionne à l’abonnement, sans prendre un pourcentage sur vos revenus.</p>
-          </details>
+          <article class="faq-card">
+            <h3>Y a-t-il une commission sur les réservations ?</h3>
+            <p>Non. Le modèle repose sur l’abonnement mensuel, pas sur un pourcentage prélevé sur vos revenus.</p>
+          </article>
 
-          <details>
-            <summary>Puis-je commencer gratuitement ?</summary>
+          <article class="faq-card">
+            <h3>Puis-je commencer gratuitement ?</h3>
             <p>Oui. Le plan gratuit permet de démarrer jusqu’à 2 logements.</p>
-          </details>
+          </article>
 
-          <details>
-            <summary>Est-ce adapté à une petite conciergerie ?</summary>
-            <p>Oui. Justement. Le plan gratuit puis Starter servent à éviter de partir dans le chaos trop tôt.</p>
-          </details>
+          <article class="faq-card">
+            <h3>Comment créer mon compte ?</h3>
+            <p>Directement sur <strong>cleanup-manager.fr</strong>. La vitrine sert à présenter le logiciel, pas à doubler les parcours.</p>
+          </article>
         </div>
 
         <div class="cta-final">
-          <h2>Arrêtez de piloter votre conciergerie au hasard</h2>
+          <h2>Arrête de gérer ta conciergerie avec des bouts d’outils</h2>
           <p>
-            Passez sur un vrai logiciel de conciergerie. Vous gagnez en clarté, en suivi et en rentabilité.
+            Passe sur une base propre : planning, production, photos, agents et facturation réunis dans un seul logiciel.
           </p>
-          <a class="btn btn-primary" href="login.html">Créer mon compte gratuit</a>
+          <a class="btn btn-primary" href="https://cleanup-manager.fr/">Créer mon compte</a>
         </div>
       </div>
     </section>
@@ -881,13 +876,11 @@
 
   <footer>
     <div class="container footer-wrap">
-      <div>© 2026 CleanUp Manager</div>
-      <div class="footer-links">
-        <a href="mentions-legales.html">Mentions légales</a>
-        <a href="confidentialite.html">Confidentialité</a>
-        <a href="cgu-cgv.html">CGU / CGV</a>
-        <a href="login.html">Connexion</a>
+      <div class="footer-brand">
+        <img src="./image/logo.png" alt="Logo CleanUp Manager">
+        <span>© 2026 CleanUp Manager</span>
       </div>
+      <div>Logiciel de conciergerie Airbnb et location courte durée</div>
     </div>
   </footer>
 
