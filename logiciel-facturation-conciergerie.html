@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Logiciel de facturation pour conciergerie | Devis, factures, avoirs – CleanUp Manager</title>
+  <meta name="description" content="Logiciel de facturation pour conciergerie : devis, factures, avoirs, relevés propriétaires, recouvrement, relances, mise en demeure, journal des ventes et règlements. CleanUp Manager centralise toute la gestion documentaire métier." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#7A5CFF" />
+  <meta name="keywords" content="logiciel facturation conciergerie, facturation conciergerie, devis facture conciergerie, avoir conciergerie, relevé propriétaire, recouvrement conciergerie, journal des ventes conciergerie" />
+
+  <link rel="canonical" href="https://logiciel-conciergerie.cleanup-manager.fr/logiciel-facturation-conciergerie.html" />
+  <link rel="icon" href="./image/logo.png" />
+
+  <meta property="og:title" content="Logiciel de facturation pour conciergerie | CleanUp Manager" />
+  <meta property="og:description" content="Devis, factures, avoirs, relevés propriétaires, recouvrement et journaux dans un seul logiciel métier pour conciergerie." />
+  <meta property="og:url" content="https://logiciel-conciergerie.cleanup-manager.fr/logiciel-facturation-conciergerie.html" />
+  <meta property="og:image" content="https://logiciel-conciergerie.cleanup-manager.fr/image/logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Logiciel de facturation pour conciergerie | CleanUp Manager" />
+  <meta name="twitter:description" content="Toute la facturation d’une conciergerie dans un seul outil métier." />
+  <meta name="twitter:image" content="https://logiciel-conciergerie.cleanup-manager.fr/image/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --violet:#7A5CFF;
+      --violet-dark:#5E39FF;
+      --bg:#F8F7FF;
+      --card:#FFFFFF;
+      --text:#111111;
+      --muted:#62697A;
+      --border:rgba(122,92,255,.16);
+      --shadow:0 16px 40px rgba(49,33,110,.08);
+      --radius:22px;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family:Inter,system-ui,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      max-width:1180px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    .topbar{
+      background:#fff;
+      border-bottom:1px solid rgba(122,92,255,.08);
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+
+    .topbar-inner{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      font-weight:900;
+      font-size:24px;
+    }
+
+    .brand img{
+      width:60px;
+      height:60px;
+      object-fit:contain;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:14px;
+      font-size:14px;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--violet),var(--violet-dark));
+      color:#fff;
+      box-shadow:0 14px 28px rgba(94,57,255,.22);
+    }
+
+    .hero{
+      padding:52px 0 24px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      padding:9px 14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--border);
+      font-size:12px;
+      font-weight:900;
+      color:#5B45C8;
+      margin-bottom:16px;
+    }
+
+    h1{
+      margin:0 0 16px;
+      font-size:52px;
+      line-height:1.04;
+      letter-spacing:-1.4px;
+    }
+
+    p{
+      margin:0 0 16px;
+      font-size:17px;
+      line-height:1.7;
+      color:var(--muted);
+    }
+
+    .hero-box{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      padding:28px;
+      margin-top:22px;
+    }
+
+    .section{
+      padding:34px 0;
+    }
+
+    .section h2{
+      margin:0 0 16px;
+      font-size:34px;
+      line-height:1.08;
+      letter-spacing:-0.8px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:18px;
+      font-weight:900;
+    }
+
+    .card p{
+      margin:0;
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    .cta-final{
+      margin-top:18px;
+      border-radius:28px;
+      padding:42px 28px;
+      background:linear-gradient(135deg,var(--violet),var(--violet-dark));
+      color:#fff;
+      text-align:center;
+    }
+
+    .cta-final h2{
+      color:#fff;
+      margin:0 0 10px;
+    }
+
+    .cta-final p{
+      color:rgba(255,255,255,.9);
+      max-width:760px;
+      margin:0 auto 20px;
+    }
+
+    footer{
+      padding:34px 0 46px;
+      text-align:center;
+      font-size:14px;
+      color:#676B76;
+    }
+
+    @media (max-width:860px){
+      h1{
+        font-size:38px;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .brand{
+        font-size:18px;
+      }
+
+      .brand img{
+        width:48px;
+        height:48px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="brand" href="./index.html">
+      <img src="./image/logo.png" alt="Logo CleanUp Manager">
+      <span>CleanUp Manager</span>
+    </a>
+    <a class="btn btn-primary" href="https://cleanup-manager.fr/">Créer mon compte</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div class="eyebrow">Facturation métier • conciergerie • location courte durée</div>
+
+    <h1>Logiciel de facturation pour conciergerie</h1>
+
+    <p>
+      Gérez devis, factures, avoirs, relevés propriétaires, relances, recouvrement,
+      mise en demeure, journal des ventes et journal des règlements dans un seul outil métier.
+    </p>
+
+    <p>
+      CleanUp Manager permet aux conciergeries et gestionnaires de location courte durée
+      de structurer toute la chaîne documentaire sans tableurs dispersés ni suivi manuel.
+    </p>
+
+    <div class="hero-box">
+      <p>
+        Le logiciel relie directement la facturation aux prestations réalisées,
+        aux propriétaires et au suivi des règlements.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Tout le cycle de facturation</h2>
+
+    <div class="grid">
+      <article class="card">
+        <h3>Devis</h3>
+        <p>Création rapide de devis professionnels pour prestations ponctuelles ou récurrentes.</p>
+      </article>
+
+      <article class="card">
+        <h3>Factures</h3>
+        <p>Transformation logique des devis en factures sans ressaisie.</p>
+      </article>
+
+      <article class="card">
+        <h3>Avoirs</h3>
+        <p>Gestion propre des annulations, corrections et ajustements.</p>
+      </article>
+
+      <article class="card">
+        <h3>Publication propriétaire</h3>
+        <p>Documents publiés directement sur la plateforme du propriétaire.</p>
+      </article>
+
+      <article class="card">
+        <h3>Relevés propriétaires</h3>
+        <p>Relevés mensuels et documents récapitulatifs centralisés.</p>
+      </article>
+
+      <article class="card">
+        <h3>Recouvrement</h3>
+        <p>Relances, mises en demeure et suivi des impayés.</p>
+      </article>
+
+      <article class="card">
+        <h3>Journal des ventes</h3>
+        <p>Historique structuré des ventes et documents émis.</p>
+      </article>
+
+      <article class="card">
+        <h3>Journal des règlements</h3>
+        <p>Suivi clair des paiements reçus et soldes en attente.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Une vraie logique métier</h2>
+
+    <p>
+      La facturation d’une conciergerie ne doit pas être isolée du reste de l’activité.
+      Chaque facture peut être reliée à une mission, un logement, un propriétaire,
+      une prestation de ménage, un check-in ou une intervention technique.
+    </p>
+
+    <p>
+      C’est cette continuité entre le terrain et l’administratif qui fait la différence
+      entre un simple outil PDF et un véritable logiciel métier.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="cta-final">
+      <h2>Arrête de bricoler la facturation</h2>
+      <p>
+        Passe sur un logiciel pensé pour les conciergeries :
+        devis, factures, avoirs, relevés, relances et règlements.
+      </p>
+      <a class="btn btn-primary" href="https://cleanup-manager.fr/">Créer mon compte gratuit</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 CleanUp Manager — Logiciel de facturation pour conciergerie
+</footer>
+
+</body>
+</html>
