@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Logiciel facturation location courte durée | CleanUp Manager</title>
-  <meta name="description" content="Logiciel de facturation pour location courte durée : devis, factures, avoirs, règlements et suivi propriétaire. Gratuit jusqu’à 2 logements, sans commission." />
+  <title>Logiciel facturation conciergerie Airbnb | Devis, factures & relevés</title>
+  <meta name="description" content="Logiciel de facturation pour conciergeries Airbnb et gestionnaires de locations courte durée : devis, factures, avoirs, règlements, logements, prestations et relevés propriétaires. Gratuit jusqu’à 2 logements." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
   <link rel="canonical" href="https://logiciel-conciergerie.cleanup-manager.fr/logiciel-facturation-location-courte-duree.html" />
   <link rel="icon" href="./image/logo.png" />
 
-  <meta property="og:title" content="Logiciel facturation location courte durée | CleanUp Manager" />
-  <meta property="og:description" content="Devis, factures, avoirs, règlements et suivi propriétaire pour conciergeries Airbnb et locations courte durée." />
+  <meta property="og:title" content="Logiciel facturation conciergerie Airbnb | CleanUp Manager" />
+  <meta property="og:description" content="Devis, factures, avoirs, règlements et relevés propriétaires pour conciergeries Airbnb et gestionnaires de locations courte durée." />
   <meta property="og:url" content="https://logiciel-conciergerie.cleanup-manager.fr/logiciel-facturation-location-courte-duree.html" />
   <meta property="og:image" content="https://logiciel-conciergerie.cleanup-manager.fr/image/logo.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Logiciel facturation location courte durée | CleanUp Manager" />
-  <meta name="twitter:description" content="Gérez devis, factures, avoirs et règlements pour votre activité de location courte durée. Gratuit jusqu’à 2 logements." />
+  <meta name="twitter:title" content="Logiciel facturation conciergerie Airbnb | CleanUp Manager" />
+  <meta name="twitter:description" content="Gérez devis, factures, avoirs, règlements et relevés propriétaires pour votre conciergerie. Gratuit jusqu’à 2 logements." />
   <meta name="twitter:image" content="https://logiciel-conciergerie.cleanup-manager.fr/image/logo.png" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
@@ -104,6 +104,21 @@
       box-shadow:var(--shadow);
     }
 
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#fff;
+      border:1px solid var(--soft);
+      border-radius:999px;
+      padding:9px 14px;
+      font-size:13px;
+      font-weight:900;
+      color:var(--violet-dark);
+      box-shadow:var(--shadow);
+      margin-bottom:18px;
+    }
+
     h1{
       font-size:46px;
       margin:0 0 18px;
@@ -141,7 +156,7 @@
     }
 
     .heroLead{
-      max-width:860px;
+      max-width:880px;
       font-size:19px;
       line-height:1.65;
       color:#333;
@@ -151,9 +166,9 @@
     .heroBenefits{
       margin-top:22px;
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
+      grid-template-columns:repeat(4,minmax(0,1fr));
       gap:12px;
-      max-width:900px;
+      max-width:1000px;
     }
 
     .benefit{
@@ -179,6 +194,22 @@
       font-size:13px;
       color:#666;
       font-weight:800;
+    }
+
+    .info-note{
+      margin-top:22px;
+      max-width:920px;
+      background:#fff;
+      border:1px solid var(--soft);
+      border-left:5px solid var(--violet);
+      border-radius:16px;
+      padding:16px 18px;
+      box-shadow:var(--shadow);
+    }
+
+    .info-note p{
+      margin:0;
+      font-size:15px;
     }
 
     .cta-box,
@@ -248,6 +279,32 @@
       font-size:14px;
     }
 
+    .faq{
+      margin-top:18px;
+      display:grid;
+      gap:12px;
+    }
+
+    details{
+      background:#fff;
+      border:1px solid var(--soft);
+      border-radius:16px;
+      padding:16px 18px;
+      box-shadow:var(--shadow);
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      color:#111;
+    }
+
+    details p{
+      margin-top:12px;
+      margin-bottom:0;
+      font-size:15px;
+    }
+
     .cta-final{
       margin-top:42px;
       padding:34px 28px;
@@ -281,25 +338,11 @@
     }
 
     @media (max-width:760px){
-      .container{
-        padding:28px 16px;
-      }
-
-      h1{
-        font-size:35px;
-      }
-
-      h2{
-        font-size:24px;
-      }
-
-      .brand{
-        font-size:18px;
-      }
-
-      .brand img{
-        width:52px;
-      }
+      .container{ padding:28px 16px; }
+      h1{ font-size:35px; }
+      h2{ font-size:24px; }
+      .brand{ font-size:18px; }
+      .brand img{ width:52px; }
 
       .heroBenefits,
       .pain-grid,
@@ -307,11 +350,27 @@
         grid-template-columns:1fr;
       }
 
-      .topbar-inner{
-        align-items:flex-start;
-      }
+      .topbar-inner{ align-items:flex-start; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"CleanUp Manager",
+    "applicationCategory":"BusinessApplication",
+    "operatingSystem":"Web",
+    "description":"Logiciel de facturation pour conciergeries Airbnb et gestionnaires de locations courte durée : devis, factures, avoirs, règlements, prestations, logements et relevés propriétaires.",
+    "url":"https://logiciel-conciergerie.cleanup-manager.fr/logiciel-facturation-location-courte-duree.html",
+    "offers":{
+      "@type":"Offer",
+      "price":"0",
+      "priceCurrency":"EUR",
+      "description":"Gratuit jusqu’à 2 logements"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -332,17 +391,29 @@
     <a href="./index.html">← Retour à CleanUp Manager</a>
   </p>
 
-  <h1>Logiciel de facturation pour location courte durée</h1>
+  <span class="badge">Facturation pensée pour les conciergeries Airbnb et multi-logements</span>
+
+  <h1>Logiciel de facturation pour conciergerie Airbnb et location courte durée</h1>
 
   <p class="heroLead">
-    Devis, factures, avoirs, règlements et suivi propriétaire dans un seul logiciel pensé
-    pour les conciergeries Airbnb, Booking, Abritel et les gestionnaires de locations courte durée.
+    CleanUp Manager centralise devis, factures, avoirs, règlements, logements,
+    prestations terrain et relevés propriétaires dans un seul outil pensé pour
+    les conciergeries Airbnb, Booking, Abritel et les gestionnaires de locations courte durée.
   </p>
+
+  <div class="info-note">
+    <p>
+      <strong>Objectif :</strong> ne plus gérer la facturation à part dans Excel,
+      un modèle Word ou un logiciel générique coupé du terrain. Les documents doivent
+      suivre les logements, les prestations et les propriétaires.
+    </p>
+  </div>
 
   <div class="heroBenefits">
     <div class="benefit">✅ Gratuit jusqu’à 2 logements</div>
     <div class="benefit">✅ Sans commission</div>
-    <div class="benefit">✅ Facturation liée aux prestations réelles</div>
+    <div class="benefit">✅ Devis, factures, avoirs</div>
+    <div class="benefit">✅ Suivi règlements & propriétaires</div>
   </div>
 
   <div class="heroCta">
@@ -352,136 +423,135 @@
   </div>
 
   <div class="pain-box">
-    <h2>Marre des factures bricolées ?</h2>
+    <h2>La facturation d’une conciergerie ne se limite pas à une facture PDF</h2>
 
     <p>
-      Beaucoup de conciergeries gèrent encore leur facturation avec des fichiers Excel,
-      des modèles PDF, des échanges WhatsApp et des relances oubliées. Ça tient au début.
-      Puis l’activité grossit, et le flou coûte du temps.
+      Dans une conciergerie, une facture est rarement isolée. Elle peut dépendre d’un logement,
+      d’un propriétaire, d’une prestation ménage, d’une intervention, d’un agent, d’un règlement
+      ou d’un relevé mensuel. Quand tout est dispersé, le suivi devient vite pénible.
     </p>
 
     <div class="pain-grid">
       <ul class="pain-list">
         <li>❌ Factures faites à la main</li>
-        <li>❌ Avoirs compliqués à suivre</li>
-        <li>❌ Paiements dispersés</li>
+        <li>❌ Avoirs et corrections difficiles à suivre</li>
+        <li>❌ Paiements dispersés ou oubliés</li>
         <li>❌ Prestations terrain non reliées à l’administratif</li>
+        <li>❌ Relevés propriétaires préparés en urgence</li>
       </ul>
 
       <ul class="ok-list">
         <li>✅ Devis, factures et avoirs centralisés</li>
         <li>✅ Règlements et reste dû visibles</li>
-        <li>✅ Relevé propriétaire mensuel</li>
-        <li>✅ Documents reliés aux logements et prestations</li>
+        <li>✅ Documents liés aux logements</li>
+        <li>✅ Facturation reliée aux prestations</li>
+        <li>✅ Base propre pour suivre les propriétaires</li>
       </ul>
     </div>
   </div>
 
-  <h2>Émettre des devis et des factures dans un cadre clair</h2>
+  <h2>Un logiciel de facturation conçu pour les conciergeries, pas seulement pour éditer des documents</h2>
 
   <p>
-    Quand une activité de location courte durée grandit, la facturation devient vite un vrai sujet.
-    Il ne s’agit plus seulement d’émettre une facture de temps en temps, mais de garder une logique
-    propre entre prestations, devis, factures, avoirs, règlements et suivi administratif.
+    Un logiciel générique peut suffire pour une facture simple. Mais une conciergerie Airbnb
+    doit gérer une logique plus complète : logements, propriétaires, prestations, agents,
+    documents commerciaux, paiements et parfois relevés de gestion.
   </p>
 
   <p>
-    <strong>CleanUp Manager</strong> est un logiciel de facturation pour location courte durée pensé
-    pour les conciergeries et gestionnaires qui veulent arrêter les bricolages entre tableurs,
-    modèles PDF dispersés et suivi approximatif.
+    <strong>CleanUp Manager</strong> aide à garder cette chaîne lisible. Vous ne créez pas seulement
+    une facture : vous structurez le lien entre l’activité terrain et l’administratif.
   </p>
 
   <div class="feature-list">
     <article class="feature">
       <h3>Devis</h3>
-      <p>Préparez des documents propres pour vos prestations et vos propriétaires.</p>
+      <p>Préparez des devis propres pour vos prestations, vos propriétaires ou vos demandes ponctuelles.</p>
     </article>
 
     <article class="feature">
       <h3>Factures</h3>
-      <p>Centralisez les factures liées aux logements, prestations et services réalisés.</p>
+      <p>Centralisez les factures liées aux logements, prestations et services réalisés par la conciergerie.</p>
     </article>
 
     <article class="feature">
       <h3>Avoirs</h3>
-      <p>Gardez une trace claire des corrections, annulations et ajustements.</p>
+      <p>Gardez une trace claire des corrections, annulations et ajustements sans perdre la logique du dossier.</p>
     </article>
 
     <article class="feature">
       <h3>Règlements</h3>
       <p>Suivez ce qui est payé, ce qui reste dû et ce qui doit être relancé.</p>
     </article>
+
+    <article class="feature">
+      <h3>Logements</h3>
+      <p>Rattachez vos documents aux logements concernés pour éviter les fichiers dispersés.</p>
+    </article>
+
+    <article class="feature">
+      <h3>Propriétaires</h3>
+      <p>Gardez une base structurée pour préparer un suivi propre avec les propriétaires gérés.</p>
+    </article>
   </div>
 
-  <h2>Mieux suivre les règlements</h2>
+  <h2>Relier facturation, prestations et activité terrain</h2>
 
   <p>
-    Le vrai problème n’est pas toujours de faire une facture. Le vrai problème, c’est souvent de savoir
-    ce qui a été payé, ce qui reste en attente, ce qui doit être relancé et ce qui a déjà été traité.
+    La facturation devient fragile lorsqu’elle est coupée du planning. Une prestation réalisée,
+    une intervention validée ou un ajustement propriétaire doit pouvoir se retrouver facilement
+    dans le suivi administratif.
   </p>
 
   <p>
-    Un logiciel de facturation pour location courte durée doit donc aller au-delà du simple document PDF.
-    Il doit aussi apporter une vue propre sur les règlements, l’état des paiements et le suivi commercial.
-  </p>
-
-  <h2>Gérer les avoirs et les ajustements</h2>
-
-  <p>
-    Dans la vraie vie, tout ne se passe pas toujours exactement comme prévu. Une prestation peut être modifiée,
-    annulée ou ajustée. Il faut alors pouvoir créer un avoir proprement, sans casser la logique administrative
-    du dossier.
-  </p>
-
-  <p>
-    Pour une conciergerie, c’est essentiel. Sans outil structuré, les corrections deviennent vite floues
-    et la traçabilité disparaît. Avec une bonne base, la chaîne documentaire reste claire.
+    C’est l’intérêt d’un logiciel métier : éviter que la production, les photos, les agents,
+    les logements et les documents commerciaux vivent dans cinq endroits différents.
   </p>
 
   <div class="compare-box">
-    <h2>Pourquoi ne pas utiliser Excel ou un logiciel générique ?</h2>
+    <h2>Pourquoi ne pas utiliser Excel ou un logiciel de facturation classique ?</h2>
 
     <p>
-      Un logiciel classique de facturation sait faire une facture. Une conciergerie a besoin de plus :
-      relier logement, prestation, agent, propriétaire, règlement et relevé mensuel dans la même logique.
+      Excel peut dépanner au début. Un logiciel de facturation classique sait éditer une facture.
+      Mais une conciergerie a besoin de relier l’administratif au terrain : logement, propriétaire,
+      intervention, agent, règlement et relevé.
     </p>
 
     <p>
-      CleanUp Manager a été pensé pour la location courte durée. Les prestations terrain, les logements,
-      les interventions et la facturation ne vivent pas dans des fichiers séparés.
+      CleanUp Manager a été pensé pour cette réalité métier. L’objectif n’est pas d’ajouter
+      un outil de plus, mais de réduire les doubles saisies et les oublis.
     </p>
   </div>
 
-  <h2>Relier facturation et activité terrain</h2>
+  <h2>Questions fréquentes</h2>
 
-  <p>
-    La facturation n’a pas de sens si elle est coupée du reste de l’activité. Une conciergerie doit pouvoir
-    relier logements, interventions, missions, agents et documents commerciaux dans le même environnement.
-  </p>
+  <div class="faq">
+    <details>
+      <summary>CleanUp Manager est-il seulement un logiciel de facturation ?</summary>
+      <p>Non. La facturation fait partie du logiciel, mais CleanUp Manager couvre aussi les logements, propriétaires, agents, planning, interventions et preuves photos.</p>
+    </details>
 
-  <p>
-    C’est là qu’un vrai logiciel métier fait la différence. On ne gère pas seulement des factures :
-    on relie la production, le suivi des prestations et l’administratif dans une seule organisation.
-  </p>
+    <details>
+      <summary>Le logiciel prend-il une commission sur les réservations ?</summary>
+      <p>Non. CleanUp Manager fonctionne à l’abonnement et ne prélève pas de commission sur les réservations ou revenus de la conciergerie.</p>
+    </details>
 
-  <h2>Pourquoi utiliser un logiciel de facturation pour location courte durée</h2>
+    <details>
+      <summary>Peut-on commencer gratuitement ?</summary>
+      <p>Oui. Le logiciel est gratuit jusqu’à 2 logements, ce qui permet de tester l’organisation avant de passer à un volume plus important.</p>
+    </details>
 
-  <p>
-    Plus l’activité se développe, plus la rigueur administrative compte. Un bon logiciel permet de gagner
-    du temps, de réduire les erreurs, de professionnaliser les échanges et de garder une vision nette
-    sur la rentabilité réelle de l’activité.
-  </p>
-
-  <p>
-    Pour une conciergerie ou un gestionnaire de location courte durée, la facturation ne doit pas être
-    un bloc à part. Elle doit s’intégrer naturellement dans le fonctionnement global de la structure.
-  </p>
+    <details>
+      <summary>Est-ce adapté aux propriétaires indépendants ?</summary>
+      <p>Le logiciel peut aider un propriétaire très structuré, mais il est surtout pensé pour les conciergeries et gestionnaires qui pilotent plusieurs logements, plusieurs prestations ou plusieurs intervenants.</p>
+    </details>
+  </div>
 
   <div class="cta-final">
-    <h2>Essayez gratuitement votre logiciel de facturation conciergerie</h2>
+    <h2>Facturez votre conciergerie sans bricoler dans Excel</h2>
     <p>
-      Gérez devis, factures, avoirs, règlements et suivi administratif
-      sans Excel ni modèles dispersés.
+      Gérez devis, factures, avoirs, règlements, logements, prestations et suivi propriétaire
+      dans un logiciel pensé pour les conciergeries Airbnb et locations courte durée.
     </p>
     <p>
       Gratuit jusqu’à 2 logements. Sans engagement. Sans commission.
@@ -492,7 +562,7 @@
 </main>
 
 <footer>
-  © 2026 CleanUp Manager — Logiciel de facturation pour location courte durée
+  © 2026 CleanUp Manager — Logiciel facturation conciergerie Airbnb & location courte durée
 </footer>
 
 </body>
