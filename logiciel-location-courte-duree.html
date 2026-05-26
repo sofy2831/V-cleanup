@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Logiciel location courte durée | Conciergerie Airbnb & Booking</title>
-  <meta name="description" content="Gérez logements, réservations Airbnb & Booking, ménages, agents, photos et facturation dans un seul logiciel de location courte durée. Gratuit jusqu’à 2 logements." />
+  <title>Logiciel conciergerie Airbnb | Planning, ménage & facturation</title>
+  <meta name="description" content="Logiciel pour conciergeries Airbnb et gestionnaires de locations courte durée : logements, propriétaires, planning ménage, agents, photos, facturation et relevés. Gratuit jusqu’à 2 logements." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
   <link rel="canonical" href="https://logiciel-conciergerie.cleanup-manager.fr/logiciel-location-courte-duree.html" />
   <link rel="icon" href="./image/logo.png" />
 
-  <meta property="og:title" content="Logiciel location courte durée | Conciergerie Airbnb & Booking" />
-  <meta property="og:description" content="Planning, logements, Airbnb, Booking, ménage, agents, photos et facturation dans un seul logiciel métier." />
+  <meta property="og:title" content="Logiciel conciergerie Airbnb | CleanUp Manager" />
+  <meta property="og:description" content="Gérez logements, propriétaires, agents, ménages, photos, factures et relevés dans un logiciel pensé pour les conciergeries." />
   <meta property="og:url" content="https://logiciel-conciergerie.cleanup-manager.fr/logiciel-location-courte-duree.html" />
   <meta property="og:image" content="https://logiciel-conciergerie.cleanup-manager.fr/image/logo.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Logiciel location courte durée | Conciergerie Airbnb & Booking" />
-  <meta name="twitter:description" content="Gérez logements, réservations, agents, photos et facturation. Gratuit jusqu’à 2 logements." />
+  <meta name="twitter:title" content="Logiciel conciergerie Airbnb | Planning, ménage & facturation" />
+  <meta name="twitter:description" content="Logiciel pour conciergeries : logements, propriétaires, agents, planning ménage, photos et facturation. Gratuit jusqu’à 2 logements." />
   <meta name="twitter:image" content="https://logiciel-conciergerie.cleanup-manager.fr/image/logo.png" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
@@ -32,6 +32,8 @@
       --muted:#444;
       --soft:#ece8ff;
       --shadow:0 14px 34px rgba(49,33,110,.08);
+      --green:#1b8f4d;
+      --red:#b3261e;
     }
 
     *{ box-sizing:border-box; }
@@ -101,6 +103,21 @@
       box-shadow:var(--shadow);
     }
 
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#fff;
+      border:1px solid var(--soft);
+      border-radius:999px;
+      padding:9px 14px;
+      font-size:13px;
+      font-weight:900;
+      color:var(--violet-dark);
+      box-shadow:var(--shadow);
+      margin-bottom:18px;
+    }
+
     h1{
       font-size:48px;
       margin:0 0 18px;
@@ -124,10 +141,26 @@
     strong{ color:#111; }
 
     .heroLead{
-      max-width:860px;
+      max-width:880px;
       font-size:19px;
       font-weight:600;
       color:#333;
+    }
+
+    .note{
+      background:#fff;
+      border:1px solid var(--soft);
+      border-left:5px solid var(--violet);
+      border-radius:16px;
+      padding:16px 18px;
+      box-shadow:var(--shadow);
+      margin-top:22px;
+      max-width:900px;
+    }
+
+    .note p{
+      margin:0;
+      font-size:15px;
     }
 
     .back{
@@ -231,6 +264,32 @@
       font-size:14px;
     }
 
+    .faq{
+      margin-top:18px;
+      display:grid;
+      gap:12px;
+    }
+
+    details{
+      background:#fff;
+      border:1px solid var(--soft);
+      border-radius:16px;
+      padding:16px 18px;
+      box-shadow:var(--shadow);
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      color:#111;
+    }
+
+    details p{
+      margin-top:12px;
+      margin-bottom:0;
+      font-size:15px;
+    }
+
     .cta-final{
       margin-top:44px;
       padding:34px 28px;
@@ -264,7 +323,6 @@
 
     @media(max-width:760px){
       .container{ padding:28px 16px; }
-
       h1{ font-size:36px; }
       h2{ font-size:25px; }
 
@@ -274,15 +332,28 @@
         grid-template-columns:1fr;
       }
 
-      .brand{
-        font-size:18px;
-      }
-
-      .brand img{
-        width:52px;
-      }
+      .brand{ font-size:18px; }
+      .brand img{ width:52px; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"CleanUp Manager",
+    "applicationCategory":"BusinessApplication",
+    "operatingSystem":"Web",
+    "description":"Logiciel pour conciergeries Airbnb et gestionnaires de locations courte durée : logements, propriétaires, planning ménage, agents, photos, facturation et relevés.",
+    "url":"https://logiciel-conciergerie.cleanup-manager.fr/logiciel-location-courte-duree.html",
+    "offers":{
+      "@type":"Offer",
+      "price":"0",
+      "priceCurrency":"EUR",
+      "description":"Gratuit jusqu’à 2 logements"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -306,24 +377,35 @@
     <a href="./index.html">← Retour à CleanUp Manager</a>
   </p>
 
-  <h1>Logiciel de location courte durée pour conciergeries Airbnb & Booking</h1>
+  <span class="badge">Logiciel métier pour conciergeries et gestionnaires multi-logements</span>
+
+  <h1>Logiciel de conciergerie Airbnb pour gérer planning, ménage et facturation</h1>
 
   <p class="heroLead">
-    Trop de conciergeries jonglent encore entre WhatsApp, Excel, Airbnb, Booking
-    et les oublis de ménage. Quand les logements augmentent, le chaos arrive vite.
+    CleanUp Manager aide les conciergeries Airbnb, Booking et location courte durée
+    à centraliser logements, propriétaires, agents, interventions, preuves photos
+    et facturation dans un seul outil.
   </p>
 
   <p>
-    <strong>CleanUp Manager</strong> centralise logements, réservations, prestations,
-    agents, preuves photos et facturation dans un seul logiciel pensé pour
-    la location courte durée.
+    Quand l’activité grandit, WhatsApp, Excel et les calendriers dispersés deviennent vite
+    ingérables : ménage oublié, agent mal informé, photo introuvable, propriétaire qui réclame
+    son relevé ou facture envoyée trop tard.
   </p>
+
+  <div class="note">
+    <p>
+      <strong>Important :</strong> CleanUp Manager n’est pas un site de réservation directe
+      pour propriétaires indépendants. C’est un logiciel de gestion pensé pour les
+      conciergeries, gestionnaires et structures qui pilotent plusieurs logements.
+    </p>
+  </div>
 
   <div class="benefits">
     <div class="benefit">✅ Gratuit jusqu’à 2 logements</div>
     <div class="benefit">✅ Sans commission</div>
     <div class="benefit">✅ Airbnb / Booking / Abritel</div>
-    <div class="benefit">✅ Planning, ménage et facturation</div>
+    <div class="benefit">✅ Planning, ménage, photos, factures</div>
   </div>
 
   <div class="cta-row">
@@ -331,90 +413,133 @@
       Tester gratuitement
     </a>
     <a href="./index.html" class="btn secondary">
-      Voir le logiciel
+      Voir les fonctionnalités
     </a>
   </div>
 
   <div class="section-box">
-    <h2>Marre des outils dispersés ?</h2>
+    <h2>Conciergerie Airbnb : le vrai problème n’est pas seulement le calendrier</h2>
+
+    <p>
+      Une conciergerie ne gère pas seulement des réservations. Elle coordonne des logements,
+      des propriétaires, des agents, des prestations de ménage, des photos de contrôle,
+      des factures, des règlements et parfois des relevés propriétaires.
+    </p>
 
     <div class="pain-grid">
       <div class="bad">
         <ul>
-          <li>❌ Réservations d’un côté</li>
-          <li>❌ Ménages oubliés</li>
-          <li>❌ Agents gérés par messages</li>
-          <li>❌ Photos introuvables</li>
+          <li>❌ Réservations Airbnb et Booking dispersées</li>
+          <li>❌ Ménages suivis dans WhatsApp ou Excel</li>
+          <li>❌ Agents prévenus au dernier moment</li>
+          <li>❌ Photos de fin d’intervention perdues</li>
+          <li>❌ Factures et relevés propriétaires à refaire à la main</li>
         </ul>
       </div>
 
       <div class="good">
         <ul>
-          <li>✅ Planning centralisé</li>
-          <li>✅ Prestations organisées</li>
-          <li>✅ Agents et preuves photos</li>
-          <li>✅ Facturation liée au terrain</li>
+          <li>✅ Logements et propriétaires centralisés</li>
+          <li>✅ Planning des prestations clair</li>
+          <li>✅ Agents assignés aux interventions</li>
+          <li>✅ Preuves photos rattachées aux missions</li>
+          <li>✅ Facturation liée à l’activité terrain</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <h2>Un logiciel pour gérer Airbnb, Booking et vos logements</h2>
+  <h2>Un logiciel de location courte durée pensé pour les conciergeries</h2>
 
   <p>
-    Une activité de location courte durée ne dépend jamais d’une seule plateforme.
-    Airbnb, Booking.com, Abritel et les réservations directes doivent toutes
-    s’intégrer dans une logique claire.
+    La location courte durée ne se résume pas à Airbnb ou Booking. Pour une conciergerie,
+    chaque réservation déclenche une organisation opérationnelle : ménage, contrôle,
+    intervention, communication agent, validation terrain, facturation et suivi propriétaire.
   </p>
 
   <p>
-    L’objectif n’est pas juste d’afficher un calendrier. Il faut savoir quoi faire,
-    sur quel logement, avec quel agent, à quel moment.
+    CleanUp Manager sert à structurer cette chaîne métier sans multiplier les outils.
+    L’objectif est simple : savoir quoi faire, sur quel logement, avec quel agent,
+    à quel moment, et garder une trace propre de ce qui a été réalisé.
   </p>
 
   <div class="feature-grid">
 
     <div class="feature">
+      <h3>🏠 Logements & propriétaires</h3>
+      <p>Centralisez les logements gérés, les propriétaires associés et les informations utiles pour chaque bien.</p>
+    </div>
+
+    <div class="feature">
       <h3>📅 Planning & réservations</h3>
-      <p>Suivez les réservations et planifiez les prestations logement par logement.</p>
+      <p>Suivez les réservations et organisez les prestations logement par logement, sans perdre la vision d’ensemble.</p>
     </div>
 
     <div class="feature">
       <h3>🧹 Ménages & interventions</h3>
-      <p>Assignez des agents, vérifiez les retours terrain et structurez vos opérations.</p>
+      <p>Planifiez les ménages, assignez les agents et gardez une organisation exploitable au quotidien.</p>
     </div>
 
     <div class="feature">
       <h3>📸 Preuves photos</h3>
-      <p>Gardez une traçabilité claire des interventions et validations.</p>
+      <p>Rattachez les photos aux interventions pour sécuriser la validation terrain et éviter les discussions floues.</p>
     </div>
 
     <div class="feature">
-      <h3>💶 Facturation</h3>
-      <p>Devis, factures, avoirs, règlements et relevés propriétaires dans le même outil.</p>
+      <h3>💶 Facturation conciergerie</h3>
+      <p>Préparez devis, factures, avoirs, règlements et documents liés à votre activité de gestion.</p>
+    </div>
+
+    <div class="feature">
+      <h3>📊 Relevés propriétaires</h3>
+      <p>Gardez une base structurée pour suivre ce qui doit être refacturé, payé ou présenté aux propriétaires.</p>
     </div>
 
   </div>
 
-  <h2>Pourquoi utiliser un logiciel de location courte durée</h2>
+  <h2>Pour qui est fait CleanUp Manager ?</h2>
 
   <p>
-    Une gestion bricolée fonctionne un temps, puis bloque la croissance.
-    Plus il y a de logements, plus les erreurs coûtent cher :
-    mission oubliée, retard, photo absente ou facture non envoyée.
+    CleanUp Manager s’adresse aux conciergeries Airbnb, aux gestionnaires de locations courte durée,
+    aux petites structures qui commencent à dépasser le simple tableau Excel, et aux équipes qui veulent
+    professionnaliser leur suivi sans basculer dans un logiciel lourd.
   </p>
 
   <p>
-    Un logiciel métier permet de cadrer l’activité, mieux répartir le travail
-    et professionnaliser votre organisation sans multiplier les outils.
+    Si vous gérez plusieurs logements, plusieurs propriétaires ou plusieurs agents, le besoin n’est plus
+    seulement de voir les réservations. Le besoin est de piloter l’exploitation.
   </p>
+
+  <h2>Questions fréquentes</h2>
+
+  <div class="faq">
+    <details>
+      <summary>CleanUp Manager remplace-t-il Airbnb ou Booking ?</summary>
+      <p>Non. CleanUp Manager ne remplace pas les plateformes de réservation. Il aide les conciergeries à organiser la gestion opérationnelle autour des logements, réservations, agents, ménages, photos et facturation.</p>
+    </details>
+
+    <details>
+      <summary>Est-ce un logiciel pour propriétaire indépendant ?</summary>
+      <p>Il peut être utilisé par un propriétaire très organisé, mais le logiciel est surtout pensé pour les conciergeries et gestionnaires qui pilotent plusieurs logements ou plusieurs intervenants.</p>
+    </details>
+
+    <details>
+      <summary>Peut-on tester gratuitement ?</summary>
+      <p>Oui. CleanUp Manager est gratuit jusqu’à 2 logements, ce qui permet de tester le fonctionnement avant de passer à une organisation plus large.</p>
+    </details>
+
+    <details>
+      <summary>Le logiciel prend-il une commission sur les réservations ?</summary>
+      <p>Non. CleanUp Manager ne prend pas de commission sur les réservations. Il sert à organiser la gestion, le planning, les interventions et la facturation.</p>
+    </details>
+  </div>
 
   <div class="cta-final">
-    <h2>Structurez votre conciergerie sans bricoler</h2>
+    <h2>Structurez votre conciergerie avant que l’organisation ne déborde</h2>
 
     <p>
-      Centralisez logements, réservations, agents, photos et facturation
-      dans un logiciel pensé pour la location courte durée.
+      Centralisez logements, propriétaires, agents, planning, preuves photos et facturation
+      dans un logiciel pensé pour les conciergeries Airbnb et locations courte durée.
     </p>
 
     <p>
@@ -429,7 +554,7 @@
 </main>
 
 <footer>
-  © 2026 CleanUp Manager — Logiciel location courte durée
+  © 2026 CleanUp Manager — Logiciel conciergerie Airbnb & location courte durée
 </footer>
 
 </body>
